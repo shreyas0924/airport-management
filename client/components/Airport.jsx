@@ -11,7 +11,7 @@ const Airport = () => {
   return (
     <div className='Airport'>
       <h1 className='text-center font-bold mt-6 text-[30px] mb-6'>
-        Airport Management
+        Airport Management System
       </h1>
 
       <TableContainer component={Paper} className='flex justify-center'>
