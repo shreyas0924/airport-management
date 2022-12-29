@@ -6,10 +6,32 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
-import axios from 'axios'
+
+// import Axios from 'axios'
 
 const Airport = () => {
+  const url = 'http://localhost:3001/airport'
+  const [airportTable, setAirportTable] = useState([])
+
+  useEffect(() => {
+    const getData = () => {
+      fetch(url, {
+        method: 'GET',
+      })
+        .then((result) => result.json())
+        .then((data) => setAirportTable(data))
+        .catch((err) => console.log(err))
+
+      for (let i = 0; i < airportTable.length; i++) {
+        console.log(airportTable[i])
+      }
+    }
+
+    getData()
+  }, [])
+
   // const [airporttable, setairporttable] = useState([])
+
   // useEffect(() => {
   //   async function airportdata(){
   //       try {
@@ -23,7 +45,7 @@ const Airport = () => {
   //       }
   //   };
   //   airportdata();
-    
+
   // }, [])
   return (
     <div className='Airport'>
@@ -45,24 +67,25 @@ const Airport = () => {
           <TableHead>
             <TableRow>
               <TableCell>Airport Name</TableCell>
-              <TableCell align='right'>City</TableCell>
+              <TableCell align='center'>City</TableCell>
               <TableCell align='right'>State</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {/* {airporttable &&
-              airporttable.map((row) => (
-                <TableRow>
-                  <TableCell component='th' scope='row'>
-                    {row.airport_name}
-                  </TableCell>
-                  <TableCell align='right'>{row.city}</TableCell>
-                  <TableCell align='right'>{row.state}</TableCell>
-                </TableRow>
-              ))} */}
+            {airportTable.map((row) => (
+              <TableRow>
+                <TableCell component='th' scope='row'>
+                  {row.airport_name}
+                </TableCell>
+                <TableCell align='center'>{row.city}</TableCell>
+                <TableCell align='right'>{row.state}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
+
+      <div></div>
 
       <div className='mt-10 flex justify-center box-border gap-3'>
         <a href='/insertairport'>

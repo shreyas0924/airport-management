@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import Airline from '../components/Airline'
 import InsertAirport from '../components/InsertAirport'
+import DeleteAirport from '../components/DeleteAiport'
+import UpdateAirport from '../components/UpdateAirport'
+import Query from '../components/Query'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
   {
     path: 'insertairport',
     element: <InsertAirport />,
+  },
+  {
+    path: 'deleteairport',
+    element: <DeleteAirport />,
+  },
+  {
+    path: 'updateairport',
+    element: <UpdateAirport />,
+  },
+  {
+    path: 'query',
+    element: <Query />,
   },
 ])
 
