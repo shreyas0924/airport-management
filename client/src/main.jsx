@@ -8,11 +8,12 @@ import UpdateAirport from '../components/UpdateAirport'
 import Query from '../components/Query'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from '../components/Login'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Login />,
   },
   {
     path: '/airport',
