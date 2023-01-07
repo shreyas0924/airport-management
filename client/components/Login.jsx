@@ -5,8 +5,9 @@ import axios from 'axios'
 function Login() {
   const navigate = useNavigate()
 
-  // const [emailPassenger, setEmailPassenger] = useState('')
-  // const [passPassenger, setPassPassenger] = useState('')
+  const [emailPassenger, setEmailPassenger] = useState('')
+  const [passwordPassenger, setPasswordPassenger] = useState('')
+  const [passengerList, setPassengerList] = useState('')
 
   const [emailStaff, setEmailStaff] = useState('')
   const [passwordStaff, setPasswordStaff] = useState('')
@@ -31,7 +32,31 @@ function Login() {
             },
           ])
         )
-      
+    } catch (err) {
+      console.error(err)
+    }
+    navigate('/airport')
+  }
+
+  function onSubmitPassenger(e) {
+    e.preventDefault()
+
+    const url = 'http://localhost:3001/api/passengerLogin'
+    try {
+      axios
+        .post(url, {
+          emailPassenger: emailPassenger,
+          passwordPassenger: passwordPassenger,
+        })
+        .then(() =>
+          setPassengerList([
+            ...passengerList,
+            {
+              emailPassenger: emailPassenger,
+              passwordPassenger: passwordPassenger,
+            },
+          ])
+        )
     } catch (err) {
       console.error(err)
     }
@@ -50,9 +75,7 @@ function Login() {
           method='post'
           onSubmit={onSubmitStaff}
           action='/airport'
-
         >
-          
           <h1 className='text-center'>Admin</h1>
           <div className=''>
             <div className='flex'>
@@ -84,15 +107,13 @@ function Login() {
           </h1>
         </Form>
 
-        {/* <Form
-          action=''
+        <Form
           className='border-2 border-black rounded-lg'
           method='post'
-          onSubmit={(e) => onSubmitPassgenger(e)}
+          onSubmit={onSubmitPassenger}
+          action='/airport'
         >
-          {' '}
-          {/* we have to put method */}
-        {/* <h1 className='text-center'>Passenger</h1>
+          <h1 className='text-center'>Passenger</h1>
           <div className=''>
             <div className='flex'>
               <p>Email:</p>
@@ -108,18 +129,18 @@ function Login() {
               <input
                 className='border-2 border-black rounded-md'
                 type='password'
-                value={passPassenger}
-                onChange={(e) => setPassPassenger(e.target.value)}
+                value={passwordPassenger}
+                onChange={(e) => setPasswordPassenger(e.target.value)}
               />
             </div>
           </div>
-          <button type='submit' className='border-2 border-black '>
+          <button type='submit' className='border-2 border-black'>
             Login
           </button>
           <h1 className='text-blue cursor-pointer hover:text-[#0000FF]'>
             Sign Up
-          </h1> */}
-        {/* </Form>  */}
+          </h1>
+        </Form>
       </div>
     </div>
   )

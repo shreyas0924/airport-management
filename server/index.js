@@ -19,11 +19,26 @@ const db = mysql.createConnection({
 //post login data
 app.post('/api/staffLogin', (req, res) => {
   const emailStaff = req.body.emailStaff
-  console.log(emailStaff)
   const passwordStaff = req.body.passwordStaff
   db.query(
     'insert into logininfostaff (email, password) values (?,?)',
     [emailStaff, passwordStaff],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('1 record inserted')
+      }
+    }
+  )
+})
+
+app.post('/api/passengerLogin', (req, res) => {
+  const emailPassenger = req.body.emailPassenger
+  const passwordPassenger = req.body.passwordPassenger
+  db.query(
+    'insert into logininfopassenger (email, password) values (?,?)',
+    [emailPassenger, passwordPassenger],
     (err, result) => {
       if (err) {
         console.log(err)
