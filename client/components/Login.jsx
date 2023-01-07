@@ -63,6 +63,10 @@ function Login() {
     navigate('/airport')
   }
 
+  function signup() {
+    navigate('/register')
+  }
+
   return (
     <div>
       <h1 className='text-center font-bold mt-6 text-[30px] mb-6'>
@@ -102,9 +106,15 @@ function Login() {
           <button type='submit' className='border-2 border-black'>
             Login
           </button>
-          <h1 className='text-blue cursor-pointer hover:text-[#0000FF]'>
-            Sign Up
-          </h1>
+          <div className='flex gap-3'>
+            <h1>Don't have an account yet? </h1>
+            <h1
+              className='text-[#0000FF] cursor-pointer hover:underline'
+              onClick={signup}
+            >
+              Register
+            </h1>
+          </div>
         </Form>
 
         <Form
@@ -137,9 +147,15 @@ function Login() {
           <button type='submit' className='border-2 border-black'>
             Login
           </button>
-          <h1 className='text-blue cursor-pointer hover:text-[#0000FF]'>
-            Sign Up
-          </h1>
+          <div className='flex gap-3'>
+            <h1>Don't have an account yet? </h1>
+            <h1
+              className='text-[#0000FF] cursor-pointer hover:underline'
+              onClick={signup}
+            >
+              Register
+            </h1>
+          </div>
         </Form>
       </div>
     </div>

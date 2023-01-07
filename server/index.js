@@ -16,7 +16,7 @@ const db = mysql.createConnection({
   database: 'airport-dbms',
 })
 
-//post login data
+//login details of passenger and staff
 app.post('/api/staffLogin', (req, res) => {
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
@@ -48,6 +48,12 @@ app.post('/api/passengerLogin', (req, res) => {
     }
   )
 })
+
+
+//Registration details of staff and passenger
+
+
+
 
 //get airport data
 app.get('/api/airport', (req, res) => {

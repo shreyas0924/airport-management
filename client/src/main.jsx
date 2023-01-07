@@ -9,6 +9,7 @@ import Query from '../components/Query'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from '../components/Login'
+import Register from '../components/Register'
 
 const router = createBrowserRouter([
   {
@@ -24,20 +25,24 @@ const router = createBrowserRouter([
     element: <Airline />,
   },
   {
-    path: 'insertairport',
+    path: '/insertairport',
     element: <InsertAirport />,
   },
   {
-    path: 'deleteairport',
+    path: '/deleteairport',
     element: <DeleteAirport />,
   },
   {
-    path: 'updateairport',
+    path: '/updateairport',
     element: <UpdateAirport />,
   },
   {
-    path: 'query',
+    path: '/query',
     element: <Query />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 ])
 
