@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper'
 // import Axios from 'axios'
 
 const Airport = () => {
-  const url = 'http://localhost:3001/airport'
+  const url = 'http://localhost:3001/api/airport'
   const [airportTable, setAirportTable] = useState([])
 
   useEffect(() => {
