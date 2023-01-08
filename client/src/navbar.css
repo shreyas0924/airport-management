@@ -1,0 +1,53 @@
+.Banner {
+  /* border: 1px solid red; */
+  color: white;
+  text-align: center;
+  background-color: #000000;
+  padding: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+.navbar {
+     background-color: #000000;
+     margin-top: 0;
+}
+
+.navBarContainer {
+  /* border: 1px solid cyan; */
+  
+  margin: 0 auto;
+  margin-top: 0px;
+  width: 90%;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBarLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navBarLogo h2 {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 35px;
+}
+
+.navBarLogo img {
+  margin-right: 10px;
+  border-radius: 40px;
+}
+
+.link-btn {
+  /* border: 1px solid blue; */
+  /* margin-left: 50px; */
+  padding-top: 1px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: white;
+  object-fit: cover;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
