@@ -1,4 +1,5 @@
 import React from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import Airline from '../components/Airline'
@@ -47,17 +48,19 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path:'/staffhome',
+    path: '/staffhome',
     element: <StaffHome />,
   },
   {
-    path:'/passengerhome',
+    path: '/passengerhome',
     element: <PassengerHome />,
-  }
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 )
