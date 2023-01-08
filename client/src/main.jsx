@@ -13,15 +13,16 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 import StaffHome from '../components/StaffHome'
 import PassengerHome from '../components/PassengerHome'
+import Airport from '../components/Airport'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login />,
+    element: <App />,
   },
   {
     path: '/airport',
-    element: <App />,
+    element: <Airport />,
   },
   {
     path: '/airline',
