@@ -35,7 +35,7 @@ function Login() {
     } catch (err) {
       console.error(err)
     }
-    navigate('/airport')
+    navigate('/staffhome')
   }
 
   function onSubmitPassenger(e) {
@@ -60,7 +60,7 @@ function Login() {
     } catch (err) {
       console.error(err)
     }
-    navigate('/airport')
+    navigate('/passengerhome')
   }
 
   function signup() {
@@ -78,7 +78,7 @@ function Login() {
           className='border-2 border-black rounded-lg'
           method='post'
           onSubmit={onSubmitStaff}
-          action='/airport'
+          
         >
           <h1 className='text-center'>Admin</h1>
           <div className=''>
@@ -121,7 +121,7 @@ function Login() {
           className='border-2 border-black rounded-lg'
           method='post'
           onSubmit={onSubmitPassenger}
-          action='/airport'
+          
         >
           <h1 className='text-center'>Passenger</h1>
           <div className=''>

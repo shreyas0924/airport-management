@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Form } from 'react-router-dom'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
@@ -7,7 +7,7 @@ import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 
 export default function Register() {
-     const navigate = useNavigate()
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -15,8 +15,8 @@ export default function Register() {
   const handleChange = (event) => {
     setType(event.target.value)
   }
-  function signin(){
-     navigate('/')
+  function signin() {
+    navigate('/')
   }
   return (
     <div>
@@ -78,7 +78,11 @@ export default function Register() {
             </FormControl>
           </div>
 
-          <button type='submit' className='border-2 border-black' onClick={signin}>
+          <button
+            type='submit'
+            className='border-2 border-black'
+            onClick={signin}
+          >
             Register
           </button>
         </Form>
