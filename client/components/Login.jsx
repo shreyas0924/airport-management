@@ -5,10 +5,13 @@ import axios from 'axios'
 function Login() {
   const navigate = useNavigate()
 
+  const [namePassenger, setNamePassenger] = useState('')
   const [emailPassenger, setEmailPassenger] = useState('')
   const [passwordPassenger, setPasswordPassenger] = useState('')
   const [passengerList, setPassengerList] = useState('')
 
+
+  const [nameStaff, setNameStaff] = useState('')
   const [emailStaff, setEmailStaff] = useState('')
   const [passwordStaff, setPasswordStaff] = useState('')
   const [staffList, setStaffList] = useState([])
@@ -20,6 +23,7 @@ function Login() {
     try {
       axios
         .post(url, {
+          nameStaff: nameStaff,
           emailStaff: emailStaff,
           passwordStaff: passwordStaff,
         })
@@ -27,6 +31,7 @@ function Login() {
           setStaffList([
             ...staffList,
             {
+              nameStaff: nameStaff,
               emailStaff: emailStaff,
               passwordStaff: passwordStaff,
             },
@@ -45,6 +50,7 @@ function Login() {
     try {
       axios
         .post(url, {
+          namePassenger: namePassenger,
           emailPassenger: emailPassenger,
           passwordPassenger: passwordPassenger,
         })
@@ -52,6 +58,7 @@ function Login() {
           setPassengerList([
             ...passengerList,
             {
+              namePassenger: namePassenger,
               emailPassenger: emailPassenger,
               passwordPassenger: passwordPassenger,
             },
@@ -82,6 +89,16 @@ function Login() {
         >
           <h1 className='text-center'>Admin</h1>
           <div className=''>
+          <div className='flex'>
+              <p>Name:</p>
+              <input
+                className='border-2 border-black rounded-md'
+                type='type'
+                name='nameStaff'
+                value={nameStaff}
+                onChange={(e) => setNameStaff(e.target.value)}
+              />
+            </div>
             <div className='flex'>
               <p>Email:</p>
               <input
@@ -125,6 +142,16 @@ function Login() {
         >
           <h1 className='text-center'>Passenger</h1>
           <div className=''>
+          <div className='flex'>
+              <p>Name:</p>
+              <input
+                className='border-2 border-black rounded-md'
+                type='type'
+                name='namePassenger'
+                value={namePassenger}
+                onChange={(e) => setNamePassenger(e.target.value)}
+              />
+            </div>
             <div className='flex'>
               <p>Email:</p>
               <input
