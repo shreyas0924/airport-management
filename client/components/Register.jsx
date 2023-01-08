@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form } from 'react-router-dom'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
+
+import { Select } from '@chakra-ui/react'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -62,20 +60,11 @@ export default function Register() {
           </div>
           <div className='flex'>
             <p>Are you: </p>
-            <FormControl sx={{ m: 1, minWidth: 100 }}>
-              <Select
-                value={type}
-                onChange={handleChange}
-                displayEmpty
-                inputProps={{ 'aria-label': 'Without label' }}
-              >
-                <MenuItem value=''>
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={'Staff'}>Staff</MenuItem>
-                <MenuItem value={'Passenger'}>Passenger</MenuItem>
-              </Select>
-            </FormControl>
+
+            <Select placeholder='Select option'>
+              <option value='option1'>Staff</option>
+              <option value='option2'>Passenger</option>
+            </Select>
           </div>
 
           <button
