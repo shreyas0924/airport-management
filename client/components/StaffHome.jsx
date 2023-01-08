@@ -7,6 +7,9 @@ export default function StaffHome() {
   function logout() {
     navigate('/')
   }
+  function staffProfile(){
+    navigate('/staffprofile');
+  }
   return (
     <>
       <div className='navbar'>
@@ -20,7 +23,7 @@ export default function StaffHome() {
           <div className='navLinks flex gap-3'>
             <button className='link-btn border-2 rounded-xl border-white border-spacing-10'>Flight Details</button>
             <button className='link-btn border-2 rounded-xl border-white border-spacing-10'>Passenger Info</button>
-            <button className='link-btn border-2 rounded-xl border-white border-spacing-10'>Profile</button>
+            <button className='link-btn border-2 rounded-xl border-white border-spacing-10' onClick={staffProfile}>Profile</button>
             <button className='link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10' onClick={logout}>Log Out</button>
           </div>
         </div>

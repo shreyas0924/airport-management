@@ -14,6 +14,7 @@ import Register from '../components/Register'
 import StaffHome from '../components/StaffHome'
 import PassengerHome from '../components/PassengerHome'
 import Airport from '../components/Airport'
+import StaffProfile from '../components/StaffProfile'
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
     path: '/passengerhome',
     element: <PassengerHome />,
   },
+  {
+    path: '/staffprofile',
+    element: <StaffProfile />
+  },
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
