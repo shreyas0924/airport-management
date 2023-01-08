@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form } from 'react-router-dom'
 
-import { Select } from '@chakra-ui/react'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -59,13 +58,16 @@ export default function Register() {
             </div>
           </div>
           <div className='flex'>
-            <p>Are you: </p>
-
-            <Select placeholder='Select option'>
-              <option value='option1'>Staff</option>
-              <option value='option2'>Passenger</option>
-            </Select>
+            <label>
+              Are you :   
+              <select value={type} onChange={handleChange}>
+                <option value='Staff'> Staff</option>
+                <option value='Passenger'> Passenger</option>
+              </select>
+            </label>
           </div>
+
+          
 
           <button
             type='submit'
