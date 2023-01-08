@@ -21,7 +21,7 @@ export default function PassengerHome() {
             {/* <button className='link-btn'>Home</button>
             <button className='link-btn'>Business</button>
             <button className='link-btn'>Add Business</button> */}
-            <button className='link-btn border-2 rounded-xl border-white border-spacing-10' onClick={logout}>Log Out</button>
+            <button className='link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10' onClick={logout}>Log Out</button>
           </div>
         </div>
       </div>

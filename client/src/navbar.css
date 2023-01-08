@@ -7,13 +7,13 @@
   font-family: 'Roboto', sans-serif;
 }
 .navbar {
-     background-color: #000000;
-     margin-top: 0;
+  background-color: #000000;
+  margin-top: 0;
 }
 
 .navBarContainer {
   /* border: 1px solid cyan; */
-  
+
   margin: 0 auto;
   margin-top: 0px;
   width: 90%;
@@ -45,9 +45,8 @@
   padding-top: 1px;
   padding-bottom: 3px;
   font-size: 20px;
-  color: white;
+
   object-fit: cover;
   padding-left: 10px;
   padding-right: 10px;
-  
 }
