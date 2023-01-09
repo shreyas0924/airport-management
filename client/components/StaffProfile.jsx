@@ -1,5 +1,5 @@
-import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import React, { useEffect, useState } from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 import {
   Table,
   Thead,
@@ -10,13 +10,28 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 export default function StaffProfile() {
+  const url = 'http://localhost:3001/api/staff'
+  const [staffData, setStaffData] = useState([])
+
+  useEffect(() => {
+    function getStaff() {
+      fetch(url, {
+        method: 'get',
+      })
+        .then((response) => response.json())
+        .then((data) => setStaffData(data))
+        .catch((err) => console.log(err))
+    }
+    getStaff()
+  }, [])
+
   return (
-    <div className="app">
+    <div className='app'>
       <TableContainer>
-        <Table variant="simple">
+        <Table variant='simple'>
           <TableCaption>Your profile!</TableCaption>
           <Thead>
             <Tr>
@@ -29,19 +44,32 @@ export default function StaffProfile() {
               <Th>Airport Name</Th>
             </Tr>
           </Thead>
+
           <Tbody>
-            <Tr>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-            </Tr>
+              {staffData.map((row) => (
+                <Tr>
+                  <Td>{row.e_id}</Td>
+                  <Td>{row.name}</Td>
+                  <Td>{row.gender}</Td>
+                  <Td>{row.salary}</Td>
+                  <Td>{row.age}</Td>
+                  <Td>{row.designation}</Td>
+                  <Td>{row.airport_name}</Td>
+                </Tr>
+              ))}
           </Tbody>
         </Table>
       </TableContainer>
+
+      {/* <div>
+        {staffData.map((row) => (
+          <>
+            <h1>{row.name}</h1>
+            <h1>{row.gender}</h1>
+            <h1>{row.salary}</h1>
+          </>
+        ))}
+      </div> */}
     </div>
-  );
+  )
 }

@@ -41,7 +41,7 @@ export default function StaffHome() {
               className="link-btn border-2 rounded-xl border-white border-spacing-10"
               onClick={staffProfile}
             >
-              Profile
+              Staff Details
             </button>
             <button
               className="link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10"

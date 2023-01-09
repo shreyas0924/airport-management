@@ -26,7 +26,6 @@ const Airport = () => {
         console.log(airportTable[i])
       }
     }
-
     getData()
   }, [])
 

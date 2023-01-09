@@ -1,5 +1,5 @@
-import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import React, { useState, useEffect } from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 import {
   Table,
   Thead,
@@ -10,12 +10,26 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 export default function FlightDetails() {
+  const url = 'http://localhost:3001/api/flight'
+  const [flight, setFlight] = useState([])
+
+  useEffect(() => {
+    function getFlight() {
+      fetch(url, {
+        method: 'get',
+      })
+        .then((response) => response.json())
+        .then((data) => setFlight(data))
+        .catch((err) => console.log(err))
+    }
+    getFlight()
+  }, [])
   return (
-    <div className="app">
+    <div className='app'>
       <TableContainer>
-        <Table variant="simple">
+        <Table variant='simple'>
           <TableCaption>Your profile!</TableCaption>
           <Thead>
             <Tr>
@@ -30,19 +44,21 @@ export default function FlightDetails() {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-              <Td></Td>
-            </Tr>
+          {flight.map((row) => (
+              <Tr>
+                <Td>{row.flight_id}</Td>
+                <Td>{row.source}</Td>
+                <Td>{row.destination}</Td>
+                <Td>{row.status}</Td>
+                <Td>{row.d_time}</Td>
+                <Td>{row.a_time}</Td>
+                <Td>{row.airline_id}</Td>
+                <Td>{row.tot_seat}</Td>
+              </Tr>
+            ))}
           </Tbody>
         </Table>
       </TableContainer>
     </div>
-  );
+  )
 }

@@ -21,7 +21,7 @@ app.post('/api/staffLogin', (req, res) => {
   const nameStaff = req.body.nameStaff
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
-  
+
   db.query(
     'insert into logininfostaff (name, email, password) values (?,?,?)',
     [nameStaff, emailStaff, passwordStaff],
@@ -41,7 +41,7 @@ app.post('/api/passengerLogin', (req, res) => {
   const passwordPassenger = req.body.passwordPassenger
   db.query(
     'insert into logininfopassenger (name, email, password) values (?,?,?)',
-    [namePassenger,emailPassenger, passwordPassenger],
+    [namePassenger, emailPassenger, passwordPassenger],
     (err, result) => {
       if (err) {
         console.log(err)
@@ -52,11 +52,7 @@ app.post('/api/passengerLogin', (req, res) => {
   )
 })
 
-
 //Registration details of staff and passenger
-
-
-
 
 //get airport data
 app.get('/api/airport', (req, res) => {
@@ -64,6 +60,40 @@ app.get('/api/airport', (req, res) => {
     if (err) {
       console.log(err)
     } else {
+      res.send(result)
+    }
+  })
+})
+
+//get staff data
+
+app.get('/api/staff', (req, res) => {
+  db.query('SELECT * from employee', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
+
+//get flight details
+app.get('/api/flight', (req, res) => {
+  db.query('select * from flight', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
+
+//get passenger info
+app.get('/api/passenger',(req,res)=>{
+  db.query('select * from passenger order by name',(err,result)=>{
+    if(err){
+      console.log(err)
+    }else{
       res.send(result)
     }
   })
