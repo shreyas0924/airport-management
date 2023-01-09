@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { ChakraProvider } from "@chakra-ui/react";
 import {
   Table,
@@ -11,8 +11,7 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
-
-export default function StaffProfile() {
+export default function PassengerInfo() {
   return (
     <div className="app">
       <TableContainer>
@@ -20,17 +19,19 @@ export default function StaffProfile() {
           <TableCaption>Your profile!</TableCaption>
           <Thead>
             <Tr>
-              <Th>Employee id</Th>
+              <Th>Passenger number</Th>
               <Th>Name</Th>
+              <Th>Address</Th>
               <Th>Gender</Th>
-              <Th>Salary</Th>
-              <Th>Age</Th>
-              <Th>designation</Th>
-              <Th>Airport Name</Th>
+              <Th>Date of birth</Th>
+              <Th>flight id</Th>
+              <Th>Ticket number</Th>
+              <Th>Bookedby</Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
+              <Td></Td>
               <Td></Td>
               <Td></Td>
               <Td></Td>
@@ -43,5 +44,5 @@ export default function StaffProfile() {
         </Table>
       </TableContainer>
     </div>
-  );
+  )
 }
