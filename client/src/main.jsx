@@ -61,7 +61,10 @@ const router = createBrowserRouter([
     path: '/staffprofile',
     element: <StaffProfile />
   },
-
+  {
+    path:'/passengerinfo',
+    element: <PassengerInfo />,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

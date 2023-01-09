@@ -11,8 +11,7 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
-
-export default function StaffProfile() {
+export default function FlightDetails() {
   return (
     <div className="app">
       <TableContainer>
@@ -20,17 +19,19 @@ export default function StaffProfile() {
           <TableCaption>Your profile!</TableCaption>
           <Thead>
             <Tr>
-              <Th>Employee id</Th>
-              <Th>Name</Th>
-              <Th>Gender</Th>
-              <Th>Salary</Th>
-              <Th>Age</Th>
-              <Th>designation</Th>
-              <Th>Airport Name</Th>
+              <Th>Flight id</Th>
+              <Th>Source</Th>
+              <Th>Destination</Th>
+              <Th>Status</Th>
+              <Th>Departure time</Th>
+              <Th>Arrival time</Th>
+              <Th>Airline id</Th>
+              <Th>Total seats</Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
+              <Td></Td>
               <Td></Td>
               <Td></Td>
               <Td></Td>
