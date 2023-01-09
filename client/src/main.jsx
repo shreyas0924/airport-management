@@ -15,6 +15,7 @@ import StaffHome from '../components/StaffHome'
 import PassengerHome from '../components/PassengerHome'
 import Airport from '../components/Airport'
 import StaffProfile from '../components/StaffProfile'
+import PassengerInfo from '../components/PassengerInfo'
 
 const router = createBrowserRouter([
   {
