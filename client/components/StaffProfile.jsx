@@ -20,14 +20,13 @@ export default function StaffProfile() {
           <TableCaption>Your profile!</TableCaption>
           <Thead>
             <Tr>
-              <Th>Passport number</Th>
+              <Th>Employee id</Th>
               <Th>Name</Th>
-              <Th>Address</Th>
               <Th>Gender</Th>
-              <Th>Date of birth</Th>
-              <Th>Flight id</Th>
-              <Th>Ticket number</Th>
-              <Th>Bookedby</Th>
+              <Th>Salary</Th>
+              <Th>Age</Th>
+              <Th>designation</Th>
+              <Th>Airport Name</Th>
             </Tr>
           </Thead>
           <Tbody>
