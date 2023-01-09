@@ -13,6 +13,9 @@ export default function StaffHome() {
   function passengerInfo() {
     navigate("/passengerinfo");
   }
+  function flightdetails() {
+    navigate("/flightdetails");
+  }
   return (
     <>
       <div className="navbar">
@@ -24,7 +27,8 @@ export default function StaffHome() {
           </div>
 
           <div className="navLinks flex gap-3">
-            <button className="link-btn border-2 rounded-xl border-white border-spacing-10">
+            <button className="link-btn border-2 rounded-xl border-white border-spacing-10"
+            onClick={flightdetails}>
               Flight Details
             </button>
             <button
