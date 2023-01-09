@@ -1,5 +1,6 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react"
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import Airline from "../components/Airline";
@@ -17,6 +18,16 @@ import Airport from "../components/Airport";
 import StaffProfile from "../components/StaffProfile";
 import PassengerInfo from "../components/PassengerInfo";
 import FlightDetails from "../components/FlightDetails";
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#ffffff",
+      // ...
+      900: "#1a202c",
+    },
+  },
+})
 
 const router = createBrowserRouter([
   {
@@ -75,7 +86,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>

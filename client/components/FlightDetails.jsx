@@ -29,9 +29,10 @@ export default function FlightDetails() {
   return (
     <div className='app'>
       <TableContainer>
-        <Table variant='simple'>
-          <TableCaption>Your profile!</TableCaption>
-          <Thead>
+      <h1 className='text-3xl text-center m-4 '>Flight Details</h1>
+        <Table variant='striped'>
+          
+          <Thead bg='brand.100'>
             <Tr>
               <Th>Flight id</Th>
               <Th>Source</Th>

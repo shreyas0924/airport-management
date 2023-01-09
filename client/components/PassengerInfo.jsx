@@ -1,4 +1,5 @@
 import React, { useState ,useEffect} from 'react'
+import '../src/styles.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import {
   Table,
@@ -28,10 +29,11 @@ export default function PassengerInfo() {
 
   return (
     <div className='app'>
+    <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
       <TableContainer>
-        <Table variant='simple'>
-          <TableCaption>Your profile!</TableCaption>
-          <Thead>
+        <Table variant='striped' >
+          
+          <Thead  bg='brand.100'>
             <Tr>
               <Th>Passport number</Th>
               <Th>Name</Th>

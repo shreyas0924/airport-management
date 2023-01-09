@@ -31,9 +31,9 @@ export default function StaffProfile() {
   return (
     <div className='app'>
       <TableContainer>
-        <Table variant='simple'>
-          <TableCaption>Your profile!</TableCaption>
-          <Thead>
+      <h1 className='text-3xl text-center m-4 '>Staff Profile</h1>
+        <Table variant='striped'>
+          <Thead bg='brand.100'>
             <Tr>
               <Th>Employee id</Th>
               <Th>Name</Th>
@@ -46,17 +46,17 @@ export default function StaffProfile() {
           </Thead>
 
           <Tbody>
-              {staffData.map((row) => (
-                <Tr>
-                  <Td>{row.e_id}</Td>
-                  <Td>{row.name}</Td>
-                  <Td>{row.gender}</Td>
-                  <Td>{row.salary}</Td>
-                  <Td>{row.age}</Td>
-                  <Td>{row.designation}</Td>
-                  <Td>{row.airport_name}</Td>
-                </Tr>
-              ))}
+            {staffData.map((row) => (
+              <Tr>
+                <Td>{row.e_id}</Td>
+                <Td>{row.name}</Td>
+                <Td>{row.gender}</Td>
+                <Td>{row.salary}</Td>
+                <Td>{row.age}</Td>
+                <Td>{row.designation}</Td>
+                <Td>{row.airport_name}</Td>
+              </Tr>
+            ))}
           </Tbody>
         </Table>
       </TableContainer>
