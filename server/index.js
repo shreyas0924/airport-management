@@ -21,6 +21,7 @@ app.post('/api/staffLogin', (req, res) => {
   const nameStaff = req.body.nameStaff
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
+  
   db.query(
     'insert into logininfostaff (name, email, password) values (?,?,?)',
     [nameStaff, emailStaff, passwordStaff],
