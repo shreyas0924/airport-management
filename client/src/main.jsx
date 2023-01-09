@@ -1,77 +1,82 @@
-import React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import Airline from '../components/Airline'
-import InsertAirport from '../components/InsertAirport'
-import DeleteAirport from '../components/DeleteAiport'
-import UpdateAirport from '../components/UpdateAirport'
-import Query from '../components/Query'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Login from '../components/Login'
-import Register from '../components/Register'
-import StaffHome from '../components/StaffHome'
-import PassengerHome from '../components/PassengerHome'
-import Airport from '../components/Airport'
-import StaffProfile from '../components/StaffProfile'
-import PassengerInfo from '../components/PassengerInfo'
+import React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import Airline from "../components/Airline";
+import InsertAirport from "../components/InsertAirport";
+import DeleteAirport from "../components/DeleteAiport";
+import UpdateAirport from "../components/UpdateAirport";
+import Query from "../components/Query";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import StaffHome from "../components/StaffHome";
+import PassengerHome from "../components/PassengerHome";
+import Airport from "../components/Airport";
+import StaffProfile from "../components/StaffProfile";
+import PassengerInfo from "../components/PassengerInfo";
+import FlightDetails from "../components/FlightDetails";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
   },
   {
-    path: '/airport',
+    path: "/airport",
     element: <Airport />,
   },
   {
-    path: '/airline',
+    path: "/airline",
     element: <Airline />,
   },
   {
-    path: '/insertairport',
+    path: "/insertairport",
     element: <InsertAirport />,
   },
   {
-    path: '/deleteairport',
+    path: "/deleteairport",
     element: <DeleteAirport />,
   },
   {
-    path: '/updateairport',
+    path: "/updateairport",
     element: <UpdateAirport />,
   },
   {
-    path: '/query',
+    path: "/query",
     element: <Query />,
   },
   {
-    path: '/register',
+    path: "/register",
     element: <Register />,
   },
   {
-    path: '/staffhome',
+    path: "/staffhome",
     element: <StaffHome />,
   },
   {
-    path: '/passengerhome',
+    path: "/passengerhome",
     element: <PassengerHome />,
   },
   {
-    path: '/staffprofile',
-    element: <StaffProfile />
+    path: "/staffprofile",
+    element: <StaffProfile />,
   },
   {
-    path:'/passengerinfo',
+    path: "/passengerinfo",
     element: <PassengerInfo />,
-  }
-])
+  },
+  {
+    path: "/flightdetails",
+    element: <FlightDetails />,
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
-)
+);
