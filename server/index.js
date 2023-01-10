@@ -22,14 +22,22 @@ app.post('/api/staffLogin', (req, res) => {
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
 
+
+  // const nameStaffReg = req.body.nameStaffReg
+  // const emailStaffReg = req.body.emailStaffReg
+  // const passwordStaffReg = req.body.passwordStaffReg
+
   db.query(
-    'insert into logininfostaff (name, email, password) values (?,?,?)',
-    [nameStaff, emailStaff, passwordStaff],
+    // 'insert into logininfostaff (name, email, password) values (?,?,?)',
+    'select * from registerstaff where email = ? and name = ? and password = ?',
+    // [nameStaff, emailStaff, passwordStaff],
+    [emailStaff, nameStaff, passwordStaff],
     (err, result) => {
       if (err) {
         console.log(err)
-      } else {
-        console.log('1 record inserted')
+      }
+      else{
+        console.log('Logged in staff')
       }
     }
   )

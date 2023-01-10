@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form } from 'react-router-dom'
 import axios from 'axios'
+
+
 function Login() {
+
+  
   const navigate = useNavigate()
 
   const [namePassenger, setNamePassenger] = useState('')
@@ -40,7 +44,10 @@ function Login() {
     } catch (err) {
       console.error(err)
     }
-    navigate('/staffhome')
+    
+
+   navigate('/staffhome')
+    
   }
 
   function onSubmitPassenger(e) {
