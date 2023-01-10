@@ -1,6 +1,8 @@
-import React, { useState ,useEffect} from 'react'
-import '../src/styles.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import React, { useState, useEffect } from "react";
+import "../src/styles.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import { useNavigate } from "react-router-dom";
 import {
   Table,
   Thead,
@@ -11,29 +13,36 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 export default function PassengerInfo() {
-  const url = 'http://localhost:3001/api/passenger'
-  const [passenger, setPassenger] = useState([])
+  const url = "http://localhost:3001/api/passenger";
+  const navigate = useNavigate();
+  const [passenger, setPassenger] = useState([]);
   useEffect(() => {
     function getPassenger() {
       fetch(url, {
-        method: 'get',
+        method: "get",
       })
         .then((response) => response.json())
         .then((data) => setPassenger(data))
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
     }
     getPassenger();
-  }, [])
-
+  }, []);
+  const goback = () => {
+    navigate(-1);
+  };
   return (
-    <div className='app'>
-    <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
+    <div className="app">
+      <h1 className="text-3xl text-center m-4 ">Details of all Passengers</h1>
+      <ButtonGroup variant="outline" spacing="6">
+        <Button colorScheme="black" onClick={goback}>
+          Go back
+        </Button>
+      </ButtonGroup>
       <TableContainer>
-        <Table variant='striped' >
-          
-          <Thead  bg='brand.100'>
+        <Table variant="striped">
+          <Thead bg="brand.100">
             <Tr>
               <Th>Passport number</Th>
               <Th>Name</Th>
@@ -62,5 +71,5 @@ export default function PassengerInfo() {
         </Table>
       </TableContainer>
     </div>
-  )
+  );
 }
