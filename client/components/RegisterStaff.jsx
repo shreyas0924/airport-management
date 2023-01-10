@@ -22,10 +22,10 @@ function RegisterStaff() {
           passwordStaffReg: passwordStaffReg,
         })
         .then(() =>
-          setStaffRegList([
-            ...staffRegList,
-            {
-              nameStaffReg: nameStaffReg,
+          setStaffRegList([  // arr[] = {} ...arr => {}  [..arr, 1] => {1} = arr    [..arr, [2,3,5]}] => 1,2,3,5
+            ...staffRegList, //spread operator
+            {  // apend below  
+              nameStaffReg: nameStaffReg,   
               emailStaffReg: emailStaffReg,
               passwordStaffReg: passwordStaffReg,
             },

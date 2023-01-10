@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "../src/styles.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import React, { useState, useEffect } from 'react'
+import '../src/styles.css'
+import { ChakraProvider } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 import {
   Table,
   Thead,
@@ -13,63 +13,65 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 export default function PassengerInfo() {
-  const url = "http://localhost:3001/api/passenger";
-  const navigate = useNavigate();
-  const [passenger, setPassenger] = useState([]);
+  const url = 'http://localhost:3001/api/passenger'
+  const navigate = useNavigate()
+  const [passenger, setPassenger] = useState([])
   useEffect(() => {
     function getPassenger() {
       fetch(url, {
-        method: "get",
+        method: 'get',
       })
         .then((response) => response.json())
         .then((data) => setPassenger(data))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
     }
-    getPassenger();
-  }, []);
+    getPassenger()
+  }, [])
   const goback = () => {
-    navigate(-1);
-  };
+    navigate(-1)
+  }
   return (
-    <div className="app">
-      <h1 className="text-3xl text-center m-4 ">Details of all Passengers</h1>
-      <ButtonGroup variant="outline" spacing="6">
-        <Button colorScheme="black" onClick={goback}>
+    <div className='app'>
+      <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
+      <ButtonGroup variant='outline' spacing='6'>
+        <Button colorScheme='black' onClick={goback}>
           Go back
         </Button>
       </ButtonGroup>
       <TableContainer>
-        <Table variant="striped">
-          <Thead bg="brand.100">
+        <Table variant='striped'>
+          <Thead bg='brand.100'>
             <Tr>
-              <Th>Passport number</Th>
               <Th>Name</Th>
+              <Th>Passport number</Th>
+
               <Th>Address</Th>
               <Th>Gender</Th>
               <Th>Date of birth</Th>
               <Th>flight id</Th>
               <Th>Ticket number</Th>
-              <Th>Bookedby</Th>
+              {/* <Th>Bookedby</Th> */}
             </Tr>
           </Thead>
           <Tbody>
             {passenger.map((row) => (
               <Tr>
-                <Td>{row.passport_no}</Td>
                 <Td>{row.name}</Td>
+                <Td>{row.passport_no}</Td>
+
                 <Td>{row.address}</Td>
                 <Td>{row.gender}</Td>
                 <Td>{row.dob}</Td>
                 <Td>{row.flight_id}</Td>
                 <Td>{row.ticket_no}</Td>
-                <Td>{row.bookedby_name}</Td>
+                {/* <Td>{row.bookedby_name}</Td> */}
               </Tr>
             ))}
           </Tbody>
         </Table>
       </TableContainer>
     </div>
-  );
+  )
 }
