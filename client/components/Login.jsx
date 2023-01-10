@@ -70,8 +70,11 @@ function Login() {
     navigate('/passengerhome')
   }
 
-  function signup() {
-    navigate('/register')
+  function signupStaff() {
+    navigate('/registerstaff')
+  }
+  function signupPassenger() {
+    navigate('/registerpassenger')
   }
 
   return (
@@ -127,7 +130,7 @@ function Login() {
             <h1>Don't have an account yet? </h1>
             <h1
               className='text-[#0000FF] cursor-pointer hover:underline'
-              onClick={signup}
+              onClick={signupStaff}
             >
               Register
             </h1>
@@ -178,7 +181,7 @@ function Login() {
             <h1>Don't have an account yet? </h1>
             <h1
               className='text-[#0000FF] cursor-pointer hover:underline'
-              onClick={signup}
+              onClick={signupPassenger}
             >
               Register
             </h1>

@@ -18,6 +18,8 @@ import Airport from "../components/Airport";
 import StaffProfile from "../components/StaffProfile";
 import PassengerInfo from "../components/PassengerInfo";
 import FlightDetails from "../components/FlightDetails";
+import RegisterStaff from "../components/RegisterStaff";
+import RegisterPassenger from "../components/RegisterPassenger";
 
 const theme = extendTheme({
   colors: {
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
   {
     path: "/flightdetails",
     element: <FlightDetails />,
+  },
+  {
+    path: '/registerstaff',
+    element: <RegisterStaff />
+  },
+  {
+    path: '/registerpassenger',
+    element: <RegisterPassenger />
   },
 ]);
 

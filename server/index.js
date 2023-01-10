@@ -54,6 +54,39 @@ app.post('/api/passengerLogin', (req, res) => {
 
 //Registration details of staff and passenger
 
+app.post('/api/registerstaff', (req, res) => {
+  const nameStaffReg = req.body.nameStaffReg
+  const emailStaffReg = req.body.emailStaffReg
+  const passwordStaffReg = req.body.passwordStaffReg
+  db.query(
+    'insert into registerstaff (name, email, password) values (?,?,?)',
+    [nameStaffReg, emailStaffReg, passwordStaffReg],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Register admin record inserted')
+      }
+    }
+  )
+})
+app.post('/api/registerpassenger', (req, res) => {
+  const nameRegPass = req.body.nameRegPass
+  const emailRegPass = req.body.emailRegPass
+  const passwordRegPass = req.body.passwordRegPass
+  db.query(
+    'insert into registerpassenger (name, email, password) values (?,?,?)',
+    [nameRegPass, emailRegPass, passwordRegPass],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Register passenger record inserted')
+      }
+    }
+  )
+})
+
 //get airport data
 app.get('/api/airport', (req, res) => {
   db.query('SELECT airport_name, city, state FROM airport', (err, result) => {
