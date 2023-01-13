@@ -35,6 +35,12 @@ export default function FlightDetails() {
   const insert = () => {
     navigate('/insertflight')
   }
+  const deleteFlight = () => {
+    navigate('/deleteflight')
+  }
+  const updateFlight = () => {
+    navigate('/updateflight')
+  }
   return (
     <div className='app'>
       <TableContainer>
@@ -81,10 +87,10 @@ export default function FlightDetails() {
         >
           Insert Flight
         </button>
-        <button className='border-black border-2 rounded-xl p-3'>
+        <button className='border-black border-2 rounded-xl p-3' onClick={deleteFlight}>
           Delete Flight
         </button>
-        <button className='border-black border-2 rounded-xl p-3'>
+        <button className='border-black border-2 rounded-xl p-3' onClick={updateFlight}>
           Update Flight
         </button>
       </div>

@@ -22,14 +22,9 @@ app.post('/api/staffLogin', (req, res) => {
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
 
-  // const nameStaffReg = req.body.nameStaffReg
-  // const emailStaffReg = req.body.emailStaffReg
-  // const passwordStaffReg = req.body.passwordStaffReg
-
   db.query(
-    // 'insert into logininfostaff (name, email, password) values (?,?,?)',
     'select * from registerstaff where email = ? and name = ? and password = ?',
-    // [nameStaff, emailStaff, passwordStaff],
+
     [emailStaff, nameStaff, passwordStaff],
     (err, result) => {
       if (err) {
@@ -155,26 +150,66 @@ app.post('/api/insertflight', (req, res) => {
       if (err) {
         console.log(err)
       } else {
-        console.log('Register passenger record inserted')
+        console.log('Inserted Flight')
       }
     }
   )
 })
 
-// app.get('/', (request, response) => {
-//   response
-//     .status(200)
-//     .send('Head to /user/:id and replace :id with your user id')
-// })
+//delete flight
+app.post('/api/deleteflight', (req, res) => {
+  const flightid = req.body.flightid
+  db.query(
+    'delete from flight where flight_id = ?',
+    [flightid],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Deleted Flight')
+      }
+    }
+  )
+})
 
-// const airportRouter = require('./airport')
-// app.use('/airport', airportRouter)
+//delete passenger
+app.post('/api/deletepassenger', (req, res) => {
+  const passportno = req.body.passportno
+  db.query(
+    'delete from passenger where passport_no = ?',
+    [passportno],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Delete passenger')
+      }
+    }
+  )
+})
 
-// const airlineRouter = require('./routes/airline')
-// app.use('/airline', airlineRouter)
-
-// const queriesRouter = require('./routes/queries.js')
-// app.use('/queries', queriesRouter)
+// add passenger
+app.post('/api/addpassenger', (req, res) => {
+  const passportno = req.body.passportno
+  const name = req.body.name
+  const gender = req.body.gender
+  const address = req.body.address
+  const dob = req.body.dob
+  const flightid = req.body.flightid
+  const ticketno = req.body.ticketno
+  const bookedby = req.body.bookedby
+  db.query(
+    'insert into passenger (passport_no, name, address, gender, dob, flight_id, ticket_no, bookedby_name) values (?,?,?,?,?,?,?,?)',
+    [passportno, name, address, gender, dob, flightid, ticketno, bookedby],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Inserted Passenger')
+      }
+    }
+  )
+})
 
 app.listen(3001, () => {
   console.log('Yey, your server is running on port 3001')

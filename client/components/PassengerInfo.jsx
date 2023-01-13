@@ -32,6 +32,15 @@ export default function PassengerInfo() {
   const goback = () => {
     navigate(-1)
   }
+  const addPassenger = () => {
+    navigate('/insertpassenger')
+  }
+  const deletePassenger = () => {
+    navigate('/deletepassenger')
+  }
+  const updatePassenger = () => {
+    navigate('/updatepassenger')
+  }
   return (
     <div className='app'>
       <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
@@ -73,9 +82,9 @@ export default function PassengerInfo() {
         </Table>
       </TableContainer>
       <div className="flex justify-evenly m-[70px]">
-        <button className="border-black border-2 rounded-xl p-2">Insert Flight</button>
-        <button className="border-black border-2 rounded-xl p-2">Delete Flight</button>
-        <button className="border-black border-2 rounded-xl p-2">Update Flight</button>
+        <button className="border-black border-2 rounded-xl p-2" onClick={addPassenger}>Add Passenger</button>
+        <button className="border-black border-2 rounded-xl p-2" onClick={deletePassenger}>Delete Passenger</button>
+        <button className="border-black border-2 rounded-xl p-2" onClick={updatePassenger}>Update Passenger</button>
       </div>
     </div>
   )

@@ -13,6 +13,11 @@ import FlightDetails from '../components/FlightDetails'
 import RegisterStaff from '../components/RegisterStaff'
 import RegisterPassenger from '../components/RegisterPassenger'
 import InsertFlight from '../components/InsertFlight'
+import DeleteFlight from '../components/DeleteFlight'
+import UpdateFlight from '../components/UpdateFlight'
+import InsertPassenger from '../components/InsertPassenger'
+import DeletePassenger from '../components/DeletePassenger'
+import UpdatePassenger from '../components/UpdatePassenger'
 
 const theme = extendTheme({
   colors: {
@@ -61,6 +66,26 @@ const router = createBrowserRouter([
   {
     path: '/insertflight',
     element: <InsertFlight />,
+  },
+  {
+    path: '/deleteflight',
+    element: <DeleteFlight />,
+  },
+  {
+    path: '/updateflight',
+    element: <UpdateFlight />,
+  },
+  {
+    path: '/insertpassenger',
+    element: <InsertPassenger />,
+  },
+  {
+    path: '/deletepassenger',
+    element: <DeletePassenger />,
+  },
+  {
+    path: '/updatepassenger',
+    element: <UpdatePassenger />,
   },
 ])
 
