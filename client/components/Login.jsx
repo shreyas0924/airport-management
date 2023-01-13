@@ -86,16 +86,20 @@ function Login() {
 
       <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
         {/* login form for admin */}
-        <Form className="" method="post" onSubmit={onSubmitStaff}>
+        <Form
+          className="border-2 border-black rounded-lg m-3"
+          method="post"
+          onSubmit={onSubmitStaff}
+        >
           <div class="px-6 h-full text-gray-800">
-            <h1 className="text-center">Admin</h1>
+            <h1 className="text-center text-lg mt-5">Admin Login</h1>
 
             <div className="flex m-5">
               <input
                 className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 type="type"
                 name="nameStaff"
-                placeholder="Name "
+                placeholder="Name"
                 value={nameStaff}
                 onChange={(e) => setNameStaff(e.target.value)}
               />
@@ -128,7 +132,7 @@ function Login() {
                 Login
               </button>
 
-              <div className="flex gap-3 ml-5">
+              <div className="flex gap-3 ml-5 mb-3">
                 <h1>Don't have an account yet? </h1>
                 <h1
                   className="text-[#0000FF] cursor-pointer hover:underline"
@@ -142,52 +146,59 @@ function Login() {
         </Form>
         {/* login form for passenger */}
         <Form
-          className="border-2 border-black rounded-lg"
+          className="border-2 border-black rounded-lg m-3"
           method="post"
           onSubmit={onSubmitPassenger}
         >
-          <h1 className="text-center">Passenger</h1>
-          <div className="">
-            <div className="flex">
-              <p>Name:</p>
+          <div class="px-6 h-full text-gray-800">
+            <h1 className="text-center text-lg mt-5 m-4">Passenger Login</h1>
+            <div className="flex mb-5 ">
               <input
-                className="border-2 border-black rounded-md"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 type="type"
                 name="namePassenger"
+                placeholder="Name"
                 value={namePassenger}
                 onChange={(e) => setNamePassenger(e.target.value)}
               />
             </div>
-            <div className="flex">
-              <p>Email:</p>
+            <div className="flex mb-5">
               <input
-                className="border-2 border-black rounded-md"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 type="email"
+                placeholder="email address"
                 value={emailPassenger}
                 onChange={(e) => setEmailPassenger(e.target.value)}
               />
             </div>
-            <div className="flex">
-              <p>Password:</p>
+            <div className="flex mb-5">
               <input
-                className="border-2 border-black rounded-md"
+                className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 type="password"
+                placeholder="Password"
                 value={passwordPassenger}
                 onChange={(e) => setPasswordPassenger(e.target.value)}
               />
             </div>
-          </div>
-          <button type="submit" className="border-2 border-black">
-            Login
-          </button>
-          <div className="flex gap-3">
-            <h1>Don't have an account yet? </h1>
-            <h1
-              className="text-[#0000FF] cursor-pointer hover:underline"
-              onClick={signupPassenger}
-            >
-              Register
-            </h1>
+
+            <div class="text-center lg:text-left mr-8">
+              <button
+                type="submit"
+                className="inline-block  px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              >
+                Login
+              </button>
+
+              <div className="flex gap-3 mb-3 mt-2">
+                <h1>Don't have an account yet? </h1>
+                <h1
+                  className="text-[#0000FF] cursor-pointer hover:underline"
+                  onClick={signupPassenger}
+                >
+                  Register
+                </h1>
+              </div>
+            </div>
           </div>
         </Form>
       </div>
