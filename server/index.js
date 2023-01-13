@@ -22,7 +22,6 @@ app.post('/api/staffLogin', (req, res) => {
   const emailStaff = req.body.emailStaff
   const passwordStaff = req.body.passwordStaff
 
-
   // const nameStaffReg = req.body.nameStaffReg
   // const emailStaffReg = req.body.emailStaffReg
   // const passwordStaffReg = req.body.passwordStaffReg
@@ -35,8 +34,7 @@ app.post('/api/staffLogin', (req, res) => {
     (err, result) => {
       if (err) {
         console.log(err)
-      }
-      else{
+      } else {
         console.log('Logged in staff')
       }
     }
@@ -130,14 +128,37 @@ app.get('/api/flight', (req, res) => {
 })
 
 //get passenger info
-app.get('/api/passenger',(req,res)=>{
-  db.query('select * from passenger order by name',(err,result)=>{
-    if(err){
+app.get('/api/passenger', (req, res) => {
+  db.query('select * from passenger order by name', (err, result) => {
+    if (err) {
       console.log(err)
-    }else{
+    } else {
       res.send(result)
     }
   })
+})
+
+//add flight
+app.post('/api/insertflight', (req, res) => {
+  const flightid = req.body.flightid
+  const source = req.body.source
+  const destination = req.body.destination
+  const status = req.body.status
+  const dtime = req.body.dtime
+  const atime = req.body.atime
+  const airlineid = req.body.airlineid
+  const totseats = req.body.totseats
+  db.query(
+    'insert into flight (flight_id, source, destination,status, d_time, a_time, airline_id, tot_seat) values (?,?,?,?,?,?,?,?)',
+    [flightid, source, destination, status, dtime, atime, airlineid, totseats],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Register passenger record inserted')
+      }
+    }
+  )
 })
 
 // app.get('/', (request, response) => {

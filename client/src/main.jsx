@@ -1,103 +1,73 @@
-import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import { extendTheme } from "@chakra-ui/react"
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import Airline from "../components/Airline";
-import InsertAirport from "../components/InsertAirport";
-import DeleteAirport from "../components/DeleteAiport";
-import UpdateAirport from "../components/UpdateAirport";
-import Query from "../components/Query";
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "../components/Login";
-import Register from "../components/Register";
-import StaffHome from "../components/StaffHome";
-import PassengerHome from "../components/PassengerHome";
-import Airport from "../components/Airport";
-import StaffProfile from "../components/StaffProfile";
-import PassengerInfo from "../components/PassengerInfo";
-import FlightDetails from "../components/FlightDetails";
-import RegisterStaff from "../components/RegisterStaff";
-import RegisterPassenger from "../components/RegisterPassenger";
+import React from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import StaffHome from '../components/StaffHome'
+import PassengerHome from '../components/PassengerHome'
+import StaffProfile from '../components/StaffProfile'
+import PassengerInfo from '../components/PassengerInfo'
+import FlightDetails from '../components/FlightDetails'
+import RegisterStaff from '../components/RegisterStaff'
+import RegisterPassenger from '../components/RegisterPassenger'
+import InsertFlight from '../components/InsertFlight'
 
 const theme = extendTheme({
   colors: {
     brand: {
-      100: "#ffffff",
+      100: '#ffffff',
       // ...
-      900: "#1a202c",
+      900: '#1a202c',
     },
   },
 })
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
   },
+
   {
-    path: "/airport",
-    element: <Airport />,
-  },
-  {
-    path: "/airline",
-    element: <Airline />,
-  },
-  {
-    path: "/insertairport",
-    element: <InsertAirport />,
-  },
-  {
-    path: "/deleteairport",
-    element: <DeleteAirport />,
-  },
-  {
-    path: "/updateairport",
-    element: <UpdateAirport />,
-  },
-  {
-    path: "/query",
-    element: <Query />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/staffhome",
+    path: '/staffhome',
     element: <StaffHome />,
   },
   {
-    path: "/passengerhome",
+    path: '/passengerhome',
     element: <PassengerHome />,
   },
   {
-    path: "/staffprofile",
+    path: '/staffprofile',
     element: <StaffProfile />,
   },
   {
-    path: "/passengerinfo",
+    path: '/passengerinfo',
     element: <PassengerInfo />,
   },
   {
-    path: "/flightdetails",
+    path: '/flightdetails',
     element: <FlightDetails />,
   },
   {
     path: '/registerstaff',
-    element: <RegisterStaff />
+    element: <RegisterStaff />,
   },
   {
     path: '/registerpassenger',
-    element: <RegisterPassenger />
+    element: <RegisterPassenger />,
   },
-]);
+  {
+    path: '/insertflight',
+    element: <InsertFlight />,
+  },
+])
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
     </ChakraProvider>
   </React.StrictMode>
-);
+)
