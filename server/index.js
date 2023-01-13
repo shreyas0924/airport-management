@@ -211,6 +211,28 @@ app.post('/api/addpassenger', (req, res) => {
   )
 })
 
+//add staff
+app.post('/api/addstaff', (req, res) => {
+  const empid = req.body.empid
+  const name = req.body.name
+  const gender = req.body.gender
+  const salary = req.body.salary
+  const age = req.body.age
+  const designation = req.body.designation
+  const airportName = req.body.airportName
+  db.query(
+    'insert into employee (e_id, name, gender, salary, age, designation, airport_name) values (?,?,?,?,?,?,?)',
+    [empid, name, gender, salary, age, designation, airportName],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Inserted Staff')
+      }
+    }
+  )
+})
+
 app.listen(3001, () => {
   console.log('Yey, your server is running on port 3001')
 })
