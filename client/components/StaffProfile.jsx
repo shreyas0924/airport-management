@@ -39,7 +39,7 @@ export default function StaffProfile() {
       <TableContainer>
         <h1 className="text-3xl text-center m-4 ">Staff Profile</h1>
         <ButtonGroup variant="outline" spacing="6">
-          <Button colorScheme="black" onClick={goback}>
+          <Button colorScheme="black" onClick={goback} className='m-3'>
             Go back
           </Button>
         </ButtonGroup>
@@ -81,6 +81,11 @@ export default function StaffProfile() {
           </>
         ))}
       </div> */}
+      <div className="flex justify-evenly m-[70px]">
+        <button className="border-black border-2 rounded-xl p-2">Add Staff</button>
+        <button className="border-black border-2 rounded-xl p-2">Delete Staff</button>
+        <button className="border-black border-2 rounded-xl p-2">Update Staff</button>
+      </div>
     </div>
   );
 }

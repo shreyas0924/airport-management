@@ -1,50 +1,51 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import "../src/navbar.css";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import FlightDetails from './FlightDetails'
+import '../src/navbar.css'
 
 export default function StaffHome() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   function logout() {
-    navigate("/");
+    navigate('/')
   }
   function staffProfile() {
-    navigate("/staffprofile");
+    navigate('/staffprofile')
   }
   function passengerInfo() {
-    navigate("/passengerinfo");
+    navigate('/passengerinfo')
   }
   function flightdetails() {
-    navigate("/flightdetails");
+    navigate('/flightdetails')
   }
   return (
     <>
-      <div className="navbar">
-        <div className="navBarContainer">
-          <div className="navBarLogo">
+      <div className='navbar'>
+        <div className='navBarContainer'>
+          <div className='navBarLogo'>
             <button>
-              <h3 className="text-2xl">Airport Management System</h3>
+              <h3 className='text-2xl'>Airport Management System</h3>
             </button>
           </div>
 
-          <div className="navLinks flex gap-3">
-            <button className="link-btn border-2 rounded-xl border-white border-spacing-10"
+          <div className='navLinks flex gap-3'>
+            {/* <button className="link-btn border-2 rounded-xl border-white border-spacing-10"
             onClick={flightdetails}>
               Flight Details
-            </button>
+            </button> */}
             <button
-              className="link-btn border-2 rounded-xl border-white border-spacing-10"
+              className='link-btn border-2 rounded-xl border-white border-spacing-10'
               onClick={passengerInfo}
             >
               Passenger Info
             </button>
             <button
-              className="link-btn border-2 rounded-xl border-white border-spacing-10"
+              className='link-btn border-2 rounded-xl border-white border-spacing-10'
               onClick={staffProfile}
             >
               Staff Details
             </button>
             <button
-              className="link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10"
+              className='link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10'
               onClick={logout}
             >
               Log Out
@@ -52,6 +53,9 @@ export default function StaffHome() {
           </div>
         </div>
       </div>
+      <div>
+        <FlightDetails />
+      </div>
     </>
-  );
+  )
 }

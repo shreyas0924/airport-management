@@ -29,17 +29,17 @@ export default function FlightDetails() {
     }
     getFlight();
   }, []);
-  const goback = () => {
-    navigate(-1);
-  };
+  // const goback = () => {
+  //   navigate(-1);
+  // };
   return (
     <div className="app">
       <TableContainer>
         <h1 className="text-3xl text-center m-4 ">Flight Details</h1>
         <ButtonGroup variant="outline" spacing="6">
-          <Button colorScheme="black" onClick={goback}>
+          {/* <Button colorScheme="black" onClick={goback}>
             Go back
-          </Button>
+          </Button> */}
         </ButtonGroup>
         <Table variant="striped">
           <Thead bg="brand.100">
@@ -70,6 +70,12 @@ export default function FlightDetails() {
           </Tbody>
         </Table>
       </TableContainer>
+
+      <div className="flex justify-evenly m-[70px]">
+        <button className="border-black border-2 rounded-xl p-3">Insert Flight</button>
+        <button className="border-black border-2 rounded-xl p-3">Delete Flight</button>
+        <button className="border-black border-2 rounded-xl p-3">Update Flight</button>
+      </div>
     </div>
   );
 }

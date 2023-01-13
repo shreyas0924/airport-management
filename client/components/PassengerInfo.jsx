@@ -36,7 +36,7 @@ export default function PassengerInfo() {
     <div className='app'>
       <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
       <ButtonGroup variant='outline' spacing='6'>
-        <Button colorScheme='black' onClick={goback}>
+        <Button colorScheme='black' onClick={goback} className='m-3'>
           Go back
         </Button>
       </ButtonGroup>
@@ -72,6 +72,11 @@ export default function PassengerInfo() {
           </Tbody>
         </Table>
       </TableContainer>
+      <div className="flex justify-evenly m-[70px]">
+        <button className="border-black border-2 rounded-xl p-2">Insert Flight</button>
+        <button className="border-black border-2 rounded-xl p-2">Delete Flight</button>
+        <button className="border-black border-2 rounded-xl p-2">Update Flight</button>
+      </div>
     </div>
   )
 }
