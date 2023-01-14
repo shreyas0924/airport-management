@@ -37,7 +37,7 @@ const DeleteStaff = () => {
   return (
     <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
       <Form className="border-black border-2" method="post" onSubmit={delStaff}>
-        <h1 className="text-center text-lg mt-5 mb-5">Delete Staff</h1>
+        <h1 className="text-center text-2xl mt-5 mb-5">Delete Staff</h1>
 
         <div className="flex m-5">
           <input
