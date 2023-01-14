@@ -58,10 +58,11 @@ const InsertFlight = () => {
   }
   return (
     <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-      <Form className="border-black border-2" method="post" onSubmit={signin}>
+      <Form className="border-black  border-2" method="post" onSubmit={signin}>
         <h1 className="text-center text-lg mt-5 mb-5">Insert Flight</h1>
 
-        <div className="flex mb-5">
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start">Flight Id:</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="text"
@@ -71,7 +72,8 @@ const InsertFlight = () => {
             onChange={(e) => setFlightid(e.target.value)}
           />
         </div>
-        <div className="flex mb-5" >
+        <div className="flex-col text-start m-5 " >
+          <h1 className="text-xl ">Source: </h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="text"
@@ -81,7 +83,8 @@ const InsertFlight = () => {
             onChange={(e) => setSource(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start mb-2">Destination:</h1> 
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="text"
@@ -91,7 +94,8 @@ const InsertFlight = () => {
             onChange={(e) => setDestination(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start mb-2">Status:</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="text"
@@ -101,8 +105,8 @@ const InsertFlight = () => {
             onChange={(e) => setStatus(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
-          <h1>Time:</h1>
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start mb-2">Time:</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="time"
@@ -111,8 +115,8 @@ const InsertFlight = () => {
             onChange={(e) => setDtime(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
-          <h1>Arrival Time:</h1>
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start mb-2">Arrival Time:</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="time"
@@ -121,17 +125,19 @@ const InsertFlight = () => {
             onChange={(e) => setAtime(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
+        <div className="flex-col m-5">
+          <h1 className="text-lg text-start mb-2">Airline Id:</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="number"
             name="name"
-            placeholder="Aireline Id"
+            placeholder="Airline Id"
             value={airlineid}
             onChange={(e) => setAirlineid(e.target.value)}
           />
         </div>
-        <div className="flex mb-5">
+        <div className="flex-col m-5">
+          <h1  className="text-lg text-start mb-2">Total seats</h1>
           <input
             className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             type="number"
@@ -141,7 +147,7 @@ const InsertFlight = () => {
             onChange={(e) => setTotseats(e.target.value)}
           />
         </div>
-        <div className="text-center lg:text-left">
+        <div className="text-start lg:text-left">
           <button
             type="submit"
             className="inline-block ml-5 mb-2 px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
