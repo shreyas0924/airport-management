@@ -53,92 +53,101 @@ const InsertStaff = () => {
           navigate(-1)
         }
   return (
-     <div>
+     <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
      <Form
        className='border-black border-2'
        method='post'
        onSubmit={addStaff}
      >
-       <h1 className='text-center'>Add Staff</h1>
+       <h1 className='text-center text-2xl mt-5 mb-5'>Add Staff</h1>
 
-       <div className='flex'>
-         <p>Employee ID :</p>
+       <div className='flex-col m-5'>
+         <h1 className="text-lg text-start">Employee Id:</h1>
          <input
-           className='border-2 border-black rounded-md'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
            type='text'
            value={empid}
+           placeholder="Employee Id"
            onChange={(e) => setEmpid(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Name :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Name:</h1> 
          <input
-           className='border-2 border-black rounded-md'
+           className='form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
            type='text'
            name='name'
+           placeholder='Name'
            value={name}
            onChange={(e) => setName(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Gender :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Gender:</h1>
          <input
-           className='border-2 border-black rounded-md'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
            type='text'
            name='name'
+           placeholder='Gender'
            value={gender}
            onChange={(e) => setGender(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Salary :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Salary:</h1>
          <input
-           className='border-2 border-black rounded-md'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
            type='number'
            name='name'
+           placeholder='Salary'
            value={salary}
            onChange={(e) => setSalary(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Age :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Age:</h1>
          <input
-           className='border-2 border-black rounded-md'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
            type='number'
            name='name'
+           placeholder='Age'
            value={age}
            onChange={(e) => setAge(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Designation :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Designation:</h1>
          <input
-           className='border-2 border-black rounded-md'
-           type='text'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+           type='text'  
            name='name'
+           placeholder='Designation'
            value={designation}
            onChange={(e) => setDesignation(e.target.value)}
          />
        </div>
-       <div className='flex'>
-         <p>Airport Name :</p>
+       <div className="flex-col m-5">
+       <h1 className="text-lg text-start mb-2">Airline Name:</h1>
          <input
-           className='border-2 border-black rounded-md'
+           className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
            type='text'
            name='name'
+           placeholder='Airline Name'
            value={airportName}
            onChange={(e) => setAirportName(e.target.value)}
          />
        </div>
        
-
+       <div className="text-start lg:text-left">
+ 
        <button
          type='submit'
-         className='border-2 border-black'
+         className="inline-block ml-5 mb-2 px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
          onClick={addStaff}
        >
          Add Staff
-       </button>    
+       </button> 
+       </div>   
      </Form>
    </div>
   )
