@@ -42,7 +42,7 @@ const DeleteFlight = () => {
         method="post"
         onSubmit={deleteFlight}
       >
-        <h1 className="text-center text-lg mt-5 mb-5">Delete Flight</h1>
+        <h1 className="text-center text-2xl mt-5 mb-5">Delete Flight</h1>
 
         <div className="flex m-5">
           <input
