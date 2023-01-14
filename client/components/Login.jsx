@@ -91,7 +91,7 @@ function Login() {
           method="post"
           onSubmit={onSubmitStaff}
         >
-          <div class="px-6 h-full text-gray-800">
+          <div className="px-6 h-full text-gray-800">
             <h1 className="text-center text-lg mt-5">Admin Login</h1>
 
             <div className="flex m-5">
@@ -127,7 +127,7 @@ function Login() {
             <div className="text-center lg:text-left">
               <button
                 type="submit"
-                class="inline-block ml-5 mb-2 px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                className="inline-block ml-5 mb-2 px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
                 Login
               </button>
@@ -150,7 +150,7 @@ function Login() {
           method="post"
           onSubmit={onSubmitPassenger}
         >
-          <div class="px-6 h-full text-gray-800">
+          <div className="px-6 h-full text-gray-800">
             <h1 className="text-center text-lg mt-5 m-4">Passenger Login</h1>
             <div className="flex mb-5 ">
               <input
@@ -181,7 +181,7 @@ function Login() {
               />
             </div>
 
-            <div class="text-center lg:text-left mr-8">
+            <div className="text-center lg:text-left mr-8">
               <button
                 type="submit"
                 className="inline-block  px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
