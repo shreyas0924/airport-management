@@ -59,7 +59,7 @@ const InsertStaff = () => {
        method='post'
        onSubmit={addStaff}
      >
-       <h1 className='text-center'>Add passenger</h1>
+       <h1 className='text-center'>Add Staff</h1>
 
        <div className='flex'>
          <p>Employee ID :</p>
@@ -94,7 +94,7 @@ const InsertStaff = () => {
          <p>Salary :</p>
          <input
            className='border-2 border-black rounded-md'
-           type='text'
+           type='number'
            name='name'
            value={salary}
            onChange={(e) => setSalary(e.target.value)}
@@ -104,7 +104,7 @@ const InsertStaff = () => {
          <p>Age :</p>
          <input
            className='border-2 border-black rounded-md'
-           type='date'
+           type='number'
            name='name'
            value={age}
            onChange={(e) => setAge(e.target.value)}

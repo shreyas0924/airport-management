@@ -36,6 +36,12 @@ export default function StaffProfile() {
   const addstaff = () => {
     navigate('/insertstaff')
   }
+  const deleteStaff = () => {
+    navigate('/deletestaff')
+  }
+  const updateStaff = () => {
+    navigate('/updatestaff')
+  }
 
   return (
     <div className='app'>
@@ -91,10 +97,10 @@ export default function StaffProfile() {
         >
           Add Staff
         </button>
-        <button className='border-black border-2 rounded-xl p-2'>
+        <button className='border-black border-2 rounded-xl p-2' onClick={deleteStaff}>
           Delete Staff
         </button>
-        <button className='border-black border-2 rounded-xl p-2'>
+        <button className='border-black border-2 rounded-xl p-2' onClick={updateStaff}>
           Update Staff
         </button>
       </div>

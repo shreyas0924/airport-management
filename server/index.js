@@ -88,16 +88,7 @@ app.post('/api/registerpassenger', (req, res) => {
   )
 })
 
-//get airport data
-app.get('/api/airport', (req, res) => {
-  db.query('SELECT airport_name, city, state FROM airport', (err, result) => {
-    if (err) {
-      console.log(err)
-    } else {
-      res.send(result)
-    }
-  })
-})
+
 
 //get staff data
 
@@ -174,6 +165,7 @@ app.post('/api/deleteflight', (req, res) => {
 
 //delete passenger
 app.post('/api/deletepassenger', (req, res) => {
+  
   const passportno = req.body.passportno
   db.query(
     'delete from passenger where passport_no = ?',
@@ -182,7 +174,24 @@ app.post('/api/deletepassenger', (req, res) => {
       if (err) {
         console.log(err)
       } else {
-        console.log('Delete passenger')
+        console.log('Deleted passenger')
+      }
+    }
+  )
+})
+
+//delete staff
+app.post('/api/deletestaff', (req, res) => {
+  
+  const empid = req.body.empid
+  db.query(
+    'delete from employee where e_id = ?',
+    [empid],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Deleted staff')
       }
     }
   )
