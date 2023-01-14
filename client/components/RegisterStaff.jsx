@@ -47,7 +47,7 @@ function RegisterStaff() {
           method="post"
           onSubmit={signup}
         >
-          <div className="px-6 h-full text-gray-800">
+          <div className="px-6 h-full text-grey-800">
             <h1 className="text-center m-5 text-lg">Regsitration of Admin</h1>
             <div className="flex mb-5">
               <input
