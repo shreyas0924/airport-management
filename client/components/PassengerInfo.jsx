@@ -3,6 +3,7 @@ import '../src/styles.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { jsPDF } from 'jspdf'
 import {
   Table,
   Thead,
@@ -17,6 +18,13 @@ import {
 export default function PassengerInfo() {
   const url = 'http://localhost:3001/api/passenger'
   const navigate = useNavigate()
+  const createPDF = async () => {
+    const pdf = new jsPDF('landscape', 'pt', 'a2')
+    const data = await document.querySelector('#pdf')
+    pdf.html(data).then(() => {
+      pdf.save('passengerinfo.pdf')
+    })
+  }
   const [passenger, setPassenger] = useState([])
   useEffect(() => {
     function getPassenger() {
@@ -43,6 +51,9 @@ export default function PassengerInfo() {
   }
   return (
     <div className='app'>
+    <div id='pdf'>
+
+    
       <h1 className='text-3xl text-center m-4 '>Details of all Passengers</h1>
       <ButtonGroup variant='outline' spacing='6'>
         <Button colorScheme='black' onClick={goback} className='m-3'>
@@ -59,7 +70,7 @@ export default function PassengerInfo() {
               <Th>Address</Th>
               <Th>Gender</Th>
               <Th>Date of birth</Th>
-              <Th>flight id</Th>
+              <Th>Passenger id</Th>
               <Th>Ticket number</Th>
               {/* <Th>Bookedby</Th> */}
             </Tr>
@@ -73,7 +84,7 @@ export default function PassengerInfo() {
                 <Td>{row.address}</Td>
                 <Td>{row.gender}</Td>
                 <Td>{row.dob}</Td>
-                <Td>{row.flight_id}</Td>
+                <Td>{row.Passenger_id}</Td>
                 <Td>{row.ticket_no}</Td>
                 {/* <Td>{row.bookedby_name}</Td> */}
               </Tr>
@@ -81,10 +92,29 @@ export default function PassengerInfo() {
           </Tbody>
         </Table>
       </TableContainer>
-      <div className="flex justify-evenly m-[70px]">
-        <button className="border-black border-2 rounded-xl p-2" onClick={addPassenger}>Add Passenger</button>
-        <button className="border-black border-2 rounded-xl p-2" onClick={deletePassenger}>Delete Passenger</button>
-        <button className="border-black border-2 rounded-xl p-2" onClick={updatePassenger}>Update Passenger</button>
+      </div>
+      <div className='flex justify-evenly m-[70px] gap-6'>
+        <button
+          className='border-black border-2 rounded-xl p-3'
+          onClick={addPassenger}
+        >
+          Insert Passenger
+        </button>
+        <button
+          className='border-black border-2 rounded-xl p-3'
+          onClick={deletePassenger}
+        >
+          Delete Passenger
+        </button>
+        <button
+          className='border-black border-2 rounded-xl p-3'
+          onClick={updatePassenger}
+        >
+          Update Passenger
+        </button>
+        <button onClick={createPDF} type='button' className='border-black border-2 rounded-xl p-3 ml-auto'>
+          Download PDF
+        </button>
       </div>
     </div>
   )

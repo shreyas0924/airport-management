@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import FlightDetails from './FlightDetails'
 import '../src/navbar.css'
 
+
 export default function StaffHome() {
   const navigate = useNavigate()
+
+  
+  
   function logout() {
     navigate('/')
   }
@@ -18,8 +22,8 @@ export default function StaffHome() {
     navigate('/flightdetails')
   }
   return (
-    <>
-      <div className='navbar'>
+    <div >
+      <div className='navbar' >
         <div className='navBarContainer'>
           <div className='navBarLogo'>
             <button>
@@ -56,6 +60,7 @@ export default function StaffHome() {
       <div>
         <FlightDetails />
       </div>
-    </>
+      
+    </div>
   )
 }
