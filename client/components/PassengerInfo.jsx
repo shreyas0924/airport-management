@@ -64,7 +64,7 @@ export default function PassengerInfo() {
                 <Th>Address</Th>
                 <Th>Gender</Th>
                 <Th>Date of birth</Th>
-                <Th>Passenger id</Th>
+
                 <Th>Ticket number</Th>
                 {/* <Th>Bookedby</Th> */}
               </Tr>
@@ -78,7 +78,7 @@ export default function PassengerInfo() {
                   <Td>{row.address}</Td>
                   <Td>{row.gender}</Td>
                   <Td>{row.dob}</Td>
-                  <Td>{row.Passenger_id}</Td>
+
                   <Td>{row.ticket_no}</Td>
                   {/* <Td>{row.bookedby_name}</Td> */}
                 </Tr>
