@@ -17,24 +17,61 @@ const db = mysql.createConnection({
 })
 
 //login details of passenger and staff
-app.post('/api/staffLogin', (req, res) => {
-  const nameStaff = req.body.nameStaff
-  const emailStaff = req.body.emailStaff
-  const passwordStaff = req.body.passwordStaff
+// app.get('/api/staffLogin', (req, res) => {
+//   const nameStaff = req.body.nameStaff
+//   const emailStaff = req.body.emailStaff
+//   const passwordStaff = req.body.passwordStaff
+//   // if (!nameStaff || !emailStaff || !passwordStaff) {
+//   //   res.send(400)
+//   // }
 
-  db.query(
-    'select * from registerstaff where email = ? and name = ? and password = ?',
+//   db.query(
+//     'select name,email,password from registerstaff where name = ? and email = ? and password = ?',
 
-    [emailStaff, nameStaff, passwordStaff],
-    (err, result) => {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log('Logged in staff')
-      }
+//     [nameStaff, emailStaff, passwordStaff],
+//     (err, result) => {
+//       if (err) {
+//         return err
+//       } else {
+//         console.log('got data')
+//       }
+//     }
+//   )
+// })
+
+//get registered staff data
+app.get('/api/staffRegData', (req, res) => {
+  db.query('SELECT * from registerstaff', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
     }
-  )
+  })
 })
+
+//get registered pass data
+app.get('/api/passRegData', (req, res) => {
+  db.query('SELECT * from registerpassenger', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
+
+// passenger info 
+app.get('/api/passengerInfo', (req, res) => {
+  db.query('select * from passenger', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
+
 
 app.post('/api/passengerLogin', (req, res) => {
   const namePassenger = req.body.namePassenger
@@ -87,8 +124,6 @@ app.post('/api/registerpassenger', (req, res) => {
     }
   )
 })
-
-
 
 //get staff data
 
@@ -165,7 +200,6 @@ app.post('/api/deleteflight', (req, res) => {
 
 //delete passenger
 app.post('/api/deletepassenger', (req, res) => {
-  
   const passportno = req.body.passportno
   db.query(
     'delete from passenger where passport_no = ?',
@@ -182,19 +216,14 @@ app.post('/api/deletepassenger', (req, res) => {
 
 //delete staff
 app.post('/api/deletestaff', (req, res) => {
-  
   const empid = req.body.empid
-  db.query(
-    'delete from employee where e_id = ?',
-    [empid],
-    (err, result) => {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log('Deleted staff')
-      }
+  db.query('delete from employee where e_id = ?', [empid], (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('Deleted staff')
     }
-  )
+  })
 })
 
 // add passenger

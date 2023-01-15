@@ -59,12 +59,12 @@ export default function PassengerInfo() {
             <Thead bg='brand.100'>
               <Tr>
                 <Th>Name</Th>
+                <Th>Email</Th>
                 <Th>Passport number</Th>
-
                 <Th>Address</Th>
+                <Th>Flight Id</Th>
                 <Th>Gender</Th>
                 <Th>Date of birth</Th>
-
                 <Th>Ticket number</Th>
                 {/* <Th>Bookedby</Th> */}
               </Tr>
@@ -73,9 +73,12 @@ export default function PassengerInfo() {
               {passenger.map((row) => (
                 <Tr>
                   <Td>{row.name}</Td>
+                  <Td>{row.email}</Td>
+
                   <Td>{row.passport_no}</Td>
 
                   <Td>{row.address}</Td>
+                  <Td>{row.flight_id}</Td>
                   <Td>{row.gender}</Td>
                   <Td>{row.dob}</Td>
 
