@@ -51,9 +51,6 @@ export default function PassengerHome(props) {
   console.log(filterTicket)
   const ticketArr = ticket.filter((item) => item.ticket_no == filterTicket)
 
-  // const namesArr = passInfo.map((x) => x.name)
-  //   const emailArr = passInfo.map((x) => x.email)
-  //   const passwordArr = passInfo.map((x) => x.password)
 
   return (
     <>
@@ -88,9 +85,6 @@ export default function PassengerHome(props) {
               <h1>Gender : {row.gender}</h1>
               <h1>Passport Number : {row.passport_no}</h1>
               <h1>Ticket Number : {row.ticket_no}</h1>
-
-              {/* <h1>Name : {row.name}</h1>
-              <h1>Name : {row.name}</h1> */}
             </div>
           ))}
         </div>

@@ -16,29 +16,6 @@ const db = mysql.createConnection({
   database: 'airport-dbms',
 })
 
-//login details of passenger and staff
-// app.get('/api/staffLogin', (req, res) => {
-//   const nameStaff = req.body.nameStaff
-//   const emailStaff = req.body.emailStaff
-//   const passwordStaff = req.body.passwordStaff
-//   // if (!nameStaff || !emailStaff || !passwordStaff) {
-//   //   res.send(400)
-//   // }
-
-//   db.query(
-//     'select name,email,password from registerstaff where name = ? and email = ? and password = ?',
-
-//     [nameStaff, emailStaff, passwordStaff],
-//     (err, result) => {
-//       if (err) {
-//         return err
-//       } else {
-//         console.log('got data')
-//       }
-//     }
-//   )
-// })
-
 //get registered staff data
 app.get('/api/staffRegData', (req, res) => {
   db.query('SELECT * from registerstaff', (err, result) => {
@@ -61,7 +38,7 @@ app.get('/api/passRegData', (req, res) => {
   })
 })
 
-// passenger info 
+// passenger info
 app.get('/api/passengerInfo', (req, res) => {
   db.query('select * from passenger', (err, result) => {
     if (err) {
@@ -80,7 +57,6 @@ app.get('/api/ticketinfo', (req, res) => {
     }
   })
 })
-
 
 app.post('/api/passengerLogin', (req, res) => {
   const namePassenger = req.body.namePassenger

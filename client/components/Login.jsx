@@ -103,7 +103,7 @@ function Login() {
       passwordArr.includes(passwordPassenger) &&
       namesPassArr.includes(namePassenger)
     ) {
-      navigate('/passengerhome', { state: {namePassenger: namePassenger }})
+      navigate('/passengerhome', { state: { namePassenger: namePassenger } })
     } else {
       setNamePassenger('')
       setEmailPassenger('')
@@ -112,59 +112,6 @@ function Login() {
       window.location.reload
     }
   }
-  // function onSubmitStaff(e) {
-  //   e.preventDefault()
-
-  //   const url = 'http://localhost:3001/api/staffLogin'
-  //   try {
-  //     axios
-  //       .get(url, {
-  //         nameStaff: nameStaff,
-  //         emailStaff: emailStaff,
-  //         passwordStaff: passwordStaff,
-  //       })
-  //       .then(() => {
-  //         setStaffList([
-  //           ...staffList,
-  //           {
-  //             nameStaff: nameStaff,
-  //             emailStaff: emailStaff,
-  //             passwordStaff: passwordStaff,
-  //           },
-  //         ])
-  //       })
-  //     navigate('/staffhome')
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  // }
-
-  // function onSubmitPassenger(e) {
-  //   e.preventDefault()
-
-  //   const url = 'http://localhost:3001/api/passengerLogin'
-  //   try {
-  //     axios
-  //       .post(url, {
-  //         namePassenger: namePassenger,
-  //         emailPassenger: emailPassenger,
-  //         passwordPassenger: passwordPassenger,
-  //       })
-  //       .then(() =>
-  //         setPassengerList([
-  //           ...passengerList,
-  //           {
-  //             namePassenger: namePassenger,
-  //             emailPassenger: emailPassenger,
-  //             passwordPassenger: passwordPassenger,
-  //           },
-  //         ])
-  //       )
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-  //   navigate('/passengerhome')
-  // }
 
   function signupStaff() {
     navigate('/registerstaff')
@@ -286,7 +233,6 @@ function Login() {
               <button
                 type='submit'
                 className='inline-block  px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-                
               >
                 Login
               </button>
