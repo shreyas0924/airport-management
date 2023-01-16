@@ -47,7 +47,9 @@ export default function PassengerHome(props) {
   const passengerName = location.state.namePassenger
 
   const filterArray = passInfo.filter((item) => item.name == passengerName)
-  
+  const filterTicket = filterArray.map((row) => row.ticket_no)
+  console.log(filterTicket)
+  const ticketArr = ticket.filter((item) => item.ticket_no == filterTicket)
 
   // const namesArr = passInfo.map((x) => x.name)
   //   const emailArr = passInfo.map((x) => x.email)
@@ -93,7 +95,23 @@ export default function PassengerHome(props) {
           ))}
         </div>
 
-        <div className='ticket'></div>
+        <div className='ticket'>
+          <h1 className='mt-6'>TICKET</h1>
+          {ticketArr.map((row) => (
+            <div>
+              <h1>{filterTicket}</h1>
+              <h1>{row.airline_id}</h1>
+              <h1>{row.price}</h1>
+              <h1>{row.seat_no}</h1>
+              <h1>Class : {row.class}</h1>
+              <h1>Destination Time : {row.d_time}</h1>
+              <h1>Arrival Time : {row.a_time}</h1>
+              <h1>Source : {row.source}</h1>
+              <h1>Destination : {row.destination}</h1>
+              <h1>Passport Number : {row.passport_no}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
