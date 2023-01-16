@@ -71,6 +71,15 @@ app.get('/api/passengerInfo', (req, res) => {
     }
   })
 })
+app.get('/api/ticketinfo', (req, res) => {
+  db.query('select * from ticket', (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.send(result)
+    }
+  })
+})
 
 
 app.post('/api/passengerLogin', (req, res) => {
