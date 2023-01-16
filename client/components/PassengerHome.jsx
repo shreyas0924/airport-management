@@ -1,12 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import '../src/navbar.css'
 
-export default function PassengerHome() {
+export default function PassengerHome(props) {
+  const location = useLocation()
   const navigate = useNavigate()
+
   function logout() {
     navigate('/')
   }
+
   return (
     <>
       <div className='navbar'>
@@ -18,9 +21,7 @@ export default function PassengerHome() {
           </div>
 
           <div className='navLinks'>
-            {/* <button className='link-btn'>Home</button>
-            <button className='link-btn'>Business</button>
-            <button className='link-btn'>Add Business</button> */}
+            <h1>{location.state.namePassenger}</h1>
             <button
               className='link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10'
               onClick={logout}
