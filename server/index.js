@@ -183,6 +183,94 @@ app.post('/api/deleteflight', (req, res) => {
   )
 })
 
+//update flight
+app.post('/api/updateflight', (req, res) => {
+  const flightid = req.body.flightid
+  const source = req.body.source
+  const destination = req.body.destination
+  const status = req.body.status
+  const dtime = req.body.dtime
+  const atime = req.body.atime
+  const airlineid = req.body.airlineid
+  const totseats = req.body.totseats
+  db.query(
+    'update flight set flight_id = ?, source = ?, destination = ?, status = ?, d_time = ?, a_time = ? , airline_id = ?, tot_seat = ? where flight_id = ?',
+    [
+      flightid,
+      source,
+      destination,
+      status,
+      dtime,
+      atime,
+      airlineid,
+      totseats,
+      flightid,
+    ],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Updated Flight')
+      }
+    }
+  )
+})
+
+//update passenger
+app.post('/api/updatepassenger', (req, res) => {
+  const passportno = req.body.passportno
+  const name = req.body.name
+  const gender = req.body.gender
+  const address = req.body.address
+  const dob = req.body.dob
+  const flightid = req.body.flightid
+  const ticketno = req.body.ticketno
+  const bookedby = req.body.bookedby
+  db.query(
+    'update passenger set passport_no = ?, name = ?, address = ?, gender = ?, dob = ?, flight_id = ? , ticket_no = ?, bookedby_name = ? where passport_no = ?',
+    [
+      passportno,
+      name,
+      address,
+      gender,
+      dob,
+      flightid,
+      ticketno,
+      bookedby,
+      passportno,
+    ],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Updated Passenger')
+      }
+    }
+  )
+})
+
+//update staff
+app.post('/api/updatestaff', (req, res) => {
+  const empid = req.body.empid
+  const name = req.body.name
+  const gender = req.body.gender
+  const salary = req.body.salary
+  const age = req.body.age
+  const designation = req.body.designation
+  const airportName = req.body.airportName
+  db.query(
+    'update employee set e_id = ? , name = ? , gender = ? , salary = ? , age = ?, designation = ?, airport_name = ? where e_id = ?',
+    [empid, name, gender, salary, age, designation, airportName, empid],
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Updated Staff')
+      }
+    }
+  )
+})
+
 //delete passenger
 app.post('/api/deletepassenger', (req, res) => {
   const passportno = req.body.passportno

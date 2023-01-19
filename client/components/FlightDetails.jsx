@@ -109,7 +109,11 @@ export default function FlightDetails() {
         >
           Update Flight
         </button>
-        <button onClick={createPDF} type='button' className='border-black border-2 rounded-xl p-3 ml-auto'>
+        <button
+          onClick={createPDF}
+          type='button'
+          className='border-black border-2 rounded-xl p-3 ml-auto'
+        >
           Download PDF
         </button>
       </div>

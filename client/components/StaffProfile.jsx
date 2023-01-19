@@ -39,7 +39,7 @@ export default function StaffProfile() {
     getStaff()
   }, [])
   const goback = () => {
-    navigate(-1)
+    navigate('/staffhome')
   }
   const addstaff = () => {
     navigate('/insertstaff')
