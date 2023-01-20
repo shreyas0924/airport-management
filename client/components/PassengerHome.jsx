@@ -60,9 +60,10 @@ export default function PassengerHome(props) {
               <h3 className="text-2xl">Airport Management System</h3>
             </button>
           </div>
-
+          <h1 className="flex text-xl mb-2 m-4">
+            Welcome,<span>{location.state.namePassenger}</span>
+          </h1>
           <div className="navLinks">
-            <h1>Welcome, {location.state.namePassenger}</h1>
             <button
               className="link-btn border-2 rounded-xl border-black bg-white text-black border-spacing-10"
               onClick={logout}
