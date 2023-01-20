@@ -76,7 +76,7 @@ export default function PassengerHome(props) {
       </div>
 
       <div className="passengerDetails m-4">
-        <h1 className="text-center text-2xl bg-stone-300">Passenger Details</h1>
+        <h1 className="text-center  text-2xl bg-[#edf2f7]">Passenger Details</h1>
 
         <div>
           {filterArray.map((row) => (
@@ -121,7 +121,7 @@ export default function PassengerHome(props) {
         </div>
 
         <div className="ticket">
-          <h1 className="mt-6 text-2xl text-center m-4 bg-stone-300">
+          <h1 className="mt-6 text-2xl text-center m-4 bg-[#edf2f7]">
             Ticket Details:
           </h1>
           {ticketArr.map((row) => (
@@ -191,16 +191,7 @@ export default function PassengerHome(props) {
                   </div>
                 </div>
 
-                {/* <h1>Ticket number: {filterTicket}</h1>
-                <h1>Airline Id: {row.airline_id}</h1>
-                <h1>Price: {row.price}</h1>
-                <h1>Seat number: {row.seat_no}</h1>
-                <h1>Class : {row.class}</h1>
-                <h1>Destination Time : {row.d_time}</h1>
-                <h1>Arrival Time : {row.a_time}</h1>
-                <h1>Source : {row.source}</h1>
-                <h1>Destination : {row.destination}</h1>
-                <h1>Passport Number : {row.passport_no}</h1> */}
+              
               </div>
             </div>
           ))}
