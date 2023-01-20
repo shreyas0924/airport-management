@@ -61,7 +61,8 @@ export default function PassengerHome(props) {
             </button>
           </div>
           <h1 className="flex text-xl ml-auto mr-5 gap2">
-            <div className="mr-3">Welcome,</div><span>{location.state.namePassenger}</span>
+            <div className="mr-3">Welcome,</div>
+            <span>{location.state.namePassenger}</span>
           </h1>
           <div className="navLinks">
             <button
@@ -74,30 +75,14 @@ export default function PassengerHome(props) {
         </div>
       </div>
 
-      <div className="passengerDetails">
-        <h1 className="text-center text-2xl bg-blue-200">Passenger Details</h1>
+      <div className="passengerDetails m-4">
+        <h1 className="text-center text-2xl bg-stone-300">Passenger Details</h1>
 
         <div>
           {filterArray.map((row) => (
             <div class="bg-white p-3 shadow-sm rounded-sm">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                <span clas="text-green-500">
-                  <svg
-                    class="h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <span className="tracking-wide text-center text-xl">About</span>
+                <span clas="text-green-500"></span>
               </div>
               <div class="text-black-700">
                 <div class="grid md:grid-cols-2 text-lg">
@@ -136,10 +121,12 @@ export default function PassengerHome(props) {
         </div>
 
         <div className="ticket">
-          <h1 className="mt-6 text-2xl text-center bg-blue-200">Ticket Details:</h1>
+          <h1 className="mt-6 text-2xl text-center m-4 bg-stone-300">
+            Ticket Details:
+          </h1>
           {ticketArr.map((row) => (
             <div class="bg-white p-3 shadow-sm rounded-sm">
-              <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8"></div>
+              <div class="flex items-center space-x-2 font-semibold text-gray-900  leading-8"></div>
               <div>
                 <div class="text-black-700">
                   <div class="grid md:grid-cols-2 text-lg">
