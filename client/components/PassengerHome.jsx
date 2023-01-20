@@ -60,8 +60,8 @@ export default function PassengerHome(props) {
               <h3 className="text-2xl">Airport Management System</h3>
             </button>
           </div>
-          <h1 className="flex text-xl mb-2 m-4">
-            Welcome,<span>{location.state.namePassenger}</span>
+          <h1 className="flex text-xl ml-auto mr-5 gap2">
+            <div className="mr-3">Welcome,</div><span>{location.state.namePassenger}</span>
           </h1>
           <div className="navLinks">
             <button
@@ -75,7 +75,7 @@ export default function PassengerHome(props) {
       </div>
 
       <div className="passengerDetails">
-        <h1 className="text-center text-2xl">Passenger Details</h1>
+        <h1 className="text-center text-2xl bg-blue-200">Passenger Details</h1>
 
         <div>
           {filterArray.map((row) => (
@@ -102,7 +102,7 @@ export default function PassengerHome(props) {
               <div class="text-black-700">
                 <div class="grid md:grid-cols-2 text-lg">
                   <div class="grid grid-cols-2">
-                    <div class="px-4 py-2 text-lg font-semibold">Name</div>
+                    <div class="px-4 py-2 text-lg font-semibold">Name:</div>
                     <div class="px-4 py-2">
                       <h1>{row.name}</h1>
                     </div>
@@ -114,7 +114,7 @@ export default function PassengerHome(props) {
                     </div>
                   </div>
                   <div class="grid grid-cols-2">
-                    <div class="px-4 py-2 font-semibold text-lg">Gender</div>
+                    <div class="px-4 py-2 font-semibold text-lg">Gender:</div>
                     <div class="px-4 py-2">{row.gender}</div>
                   </div>
                   <div class="grid grid-cols-2">
@@ -125,7 +125,7 @@ export default function PassengerHome(props) {
                   </div>
                   <div class="grid grid-cols-2">
                     <div class="px-4 py-2 font-semibold text-lg">
-                      Ticket Number
+                      Ticket Number:
                     </div>
                     <div class="px-4 py-2">{row.ticket_no}</div>
                   </div>
@@ -136,7 +136,7 @@ export default function PassengerHome(props) {
         </div>
 
         <div className="ticket">
-          <h1 className="mt-6 text-2xl text-center">Ticket Details</h1>
+          <h1 className="mt-6 text-2xl text-center bg-blue-200">Ticket Details:</h1>
           {ticketArr.map((row) => (
             <div class="bg-white p-3 shadow-sm rounded-sm">
               <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8"></div>
