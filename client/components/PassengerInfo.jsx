@@ -38,7 +38,7 @@ export default function PassengerInfo() {
     getPassenger()
   }, [])
   const goback = () => {
-    navigate(-1)
+    navigate('/staffhome')
   }
   const addPassenger = () => {
     navigate('/insertpassenger')
