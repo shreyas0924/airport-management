@@ -17,7 +17,7 @@ const InsertFlight = () => {
 
   const [flightinsert, setFlightInsert] = useState([])
 
-  function signin(e) {
+  function insertFlightDetails(e) {
     e.preventDefault()
 
     const url = 'http://localhost:3001/api/insertflight'
@@ -35,10 +35,8 @@ const InsertFlight = () => {
         })
         .then(() =>
           setFlightInsert([
-            // arr[] = {} ...arr => {}  [..arr, 1] => {1} = arr    [..arr, [2,3,5]}] => 1,2,3,5
-            ...flightinsert, //spread operator
+            ...flightinsert,
             {
-              // apend below
               flightid: flightid,
               source: source,
               destination: destination,
@@ -53,7 +51,6 @@ const InsertFlight = () => {
     } catch (err) {
       console.error(err)
     }
-
     navigate(-1)
   }
   const goback = () => {
@@ -61,7 +58,11 @@ const InsertFlight = () => {
   }
   return (
     <div className='flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5'>
-      <Form className='border-black  border-2' method='post' onSubmit={signin}>
+      <Form
+        className='border-black  border-2'
+        method='post'
+        onSubmit={insertFlightDetails}
+      >
         <h1 className='text-center text-lg mt-5 mb-5'>Insert Flight</h1>
 
         <div className='flex-col m-5'>
@@ -154,7 +155,7 @@ const InsertFlight = () => {
           <button
             type='submit'
             className='inline-block ml-5 mb-4 px-5 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-            onClick={signin}
+            onClick={insertFlightDetails}
           >
             Insert Flight
           </button>
