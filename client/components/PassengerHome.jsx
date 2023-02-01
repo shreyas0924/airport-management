@@ -118,12 +118,6 @@ export default function PassengerHome(props) {
                     </div>
                     <div class='px-4 py-2'>{row.passport_no}</div>
                   </div>
-                  {/* <div class='grid grid-cols-2'>
-                    <div class='px-4 py-2 font-semibold text-lg'>
-                      Ticket Number:
-                    </div>
-                    <div class='px-4 py-2'>{row.ticket_no}</div>
-                  </div> */}
                 </div>
               </div>
             </div>
