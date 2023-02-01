@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import '../src/navbar.css'
-
+import { jsPDF } from 'jspdf'
 export default function PassengerHome(props) {
   const location = useLocation()
   const navigate = useNavigate()
@@ -50,6 +50,14 @@ export default function PassengerHome(props) {
   const filterTicket = filterArray.map((row) => row.ticket_no)
   console.log(filterTicket)
   const ticketArr = ticket.filter((item) => item.ticket_no == filterTicket)
+
+  const createPDF = async () => {
+    const pdf = new jsPDF('landscape', 'pt', 'a2')
+    const data = await document.querySelector('#pdf')
+    pdf.html(data).then(() => {
+      pdf.save('ticket.pdf')
+    })
+  }
 
   return (
     <>
@@ -110,19 +118,19 @@ export default function PassengerHome(props) {
                     </div>
                     <div class='px-4 py-2'>{row.passport_no}</div>
                   </div>
-                  <div class='grid grid-cols-2'>
+                  {/* <div class='grid grid-cols-2'>
                     <div class='px-4 py-2 font-semibold text-lg'>
                       Ticket Number:
                     </div>
                     <div class='px-4 py-2'>{row.ticket_no}</div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className='ticket'>
+        <div className='ticket' id='pdf'>
           <h1 className='mt-6 text-2xl text-center m-4 bg-[#edf2f7]'>
             Ticket Details:
           </h1>
@@ -196,6 +204,15 @@ export default function PassengerHome(props) {
             </div>
           ))}
         </div>
+      </div>
+      <div className='flex'>
+        <button
+          onClick={createPDF}
+          type='button'
+          className='border-black border-2 rounded-xl p-3 ml-auto mr-[10%] mt-6'
+        >
+          Download PDF
+        </button>
       </div>
     </>
   )
