@@ -134,8 +134,43 @@ export default function PassengerHome(props) {
           <h1 className='mt-6 text-2xl text-center m-4 bg-[#edf2f7]'>
             Ticket Details:
           </h1>
+          <div>
+            {filterArray.map((row) => (
+              <div class='bg-white p-3 pb-0 shadow-sm rounded-sm'>
+                <div class='flex items-center space-x-2 font-semibold text-gray-900 leading-8'>
+                  <span clas='text-green-500'></span>
+                </div>
+                <div class='text-black-700'>
+                  <div class='grid md:grid-cols-2 text-lg'>
+                    <div class='grid grid-cols-2'>
+                      <div class='px-4 py-1 text-lg font-semibold'>Name:</div>
+                      <div class='px-4 py-1'>
+                        <h1>{row.name}</h1>
+                      </div>
+                    </div>
+                    <div class='grid grid-cols-2'>
+                      <div class='px-4 py-1 font-semibold text-lg'>Email:</div>
+                      <div class=' py-1'>
+                        <div class='px-4 py-1'>{row.email}</div>
+                      </div>
+                    </div>
+                    <div class='grid grid-cols-2'>
+                      <div class='px-4 py-1 font-semibold text-lg'>Gender:</div>
+                      <div class='px-4 py-1'>{row.gender}</div>
+                    </div>
+                    <div class='grid grid-cols-2'>
+                      <div class='px-4 py-1 text-lg font-semibold'>
+                        Passport number:
+                      </div>
+                      <div class='px-4 py-1'>{row.passport_no}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
           {ticketArr.map((row) => (
-            <div class='bg-white p-3 shadow-sm rounded-sm'>
+            <div class='bg-white p-3 pt-0 shadow-sm rounded-sm'>
               <div class='flex items-center space-x-2 font-semibold text-gray-900  leading-8'></div>
               <div>
                 <div class='text-black-700'>
